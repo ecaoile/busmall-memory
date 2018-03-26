@@ -30,6 +30,9 @@ function Product(imgName, filePath, link) {
 new Product ('Bacon Beans', '../img/bacon-beans.jpg', '/products.html#bacon-beans');
 new Product ('Banana Slug Mask', '../img/banana-slug-mask.jpg', '/products.html#banana-slug-mask');
 new Product ('Cat Butt Gum', '../img/cat-butt-gum.jpg', '/products.html#cat-butt-gum');
+new Product ('Creepy Horse Man', '../img/creepy-horse-man.jpg', '/products.html#creepy-horse-man.jpg');
+new Product ('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', '/product.html#cupcake-lip-balm');
+new Product ('Dog Beers', '../img/dog-beers.jpg', '/product.html#dog-beers');
 
 //array of table's td
 var tableCellsArray = memoryTable.getElementsByTagName('td');
@@ -48,20 +51,30 @@ function createRandImgIndex() {
   randImgIndex = Math.floor(Math.random() * Product.allProducts.length);
   return randImgIndex;
 }
-createRandImgIndex();
 
 
 function renderGame() {
-  // if it has nothing in it the 'console.log();'
-  if (tableCellsArray[randTdIndex].innerHTML) {
-    console.log('THis td has stuff');
-    createRandTdIndex();
+
+  // for loop to fill whole table
+  var numUniqueImages = Math.floor(tableCellsArray.length / 2);
+
+  for (var i = 0; i < numUniqueImages; i++ ) {
+
+    createRandImgIndex();
+
+    for (var j = 0; j < 2; j++) {
+      // if it has nothing in it the 'console.log();'
+      while (tableCellsArray[randTdIndex].innerHTML) {
+        console.log('THis td has stuff');
+        createRandTdIndex();
+      }
+
+      var randTdElement = tableCellsArray[randTdIndex];
+      randTdElement.innerHTML = '<img src="' + Product.allProducts[randImgIndex].filePath + '" alt="' + Product.allProducts[randImgIndex].imgName + '" />';
+
+      createRandTdIndex();
+    }
   }
-
-
-
-  var randTdElement = tableCellsArray[randTdIndex];
-  randTdElement.innerHTML = '<img src="' + Product.allProducts[randImgIndex].filePath + '" alt="' + Product.allProducts[randImgIndex].imgName + '" />';
 }
 renderGame();
 
