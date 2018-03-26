@@ -96,7 +96,7 @@ function renderGame() {
       randTdElement.innerHTML =
       '<div class="card-container">\
         <div class="card">\
-          <div class="side">\
+          <div class="side back">\
             <img src="../img/bus-mall-card-over.png" alt="Bus Mall Placeholder">\
           </div>\
           <div class="side">\
@@ -115,9 +115,9 @@ function flipCardsOnLoad() {
   var tdlist = memoryTable.getElementsByTagName('td');
   console.log(tdlist);
   for (var i = 0; i < tdlist.length; i++) {
-    var sideclass = tdlist[i].getElementsByClassName('side')[1];
-    console.log(sideclass);
-    sideclass.classList.toggle('back');
+    var cardClass = tdlist[i].getElementsByClassName('card')[0];
+    console.log(cardClass);
+    cardClass.classList.toggle('card-flip');
     // sideclass.className = 'side back';
   }
 }

@@ -1,6 +1,6 @@
 #memory-game td img {
-  height: 200px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
 }
 
 #memory-game {
@@ -9,7 +9,7 @@
 }
 td {
   background: red;
-  
+  padding: 2em;
 }
 .card-container {
   height: 150px;
@@ -24,16 +24,19 @@ td {
   transition: all 1s ease-in-out;
   width: 100%;
 }
-.card-flip {
+/* .card:hover {
   transform: rotateY(180deg);
-}
+} */
 .card .side {
   backface-visibility: hidden;
   height: 100%;
   position: absolute;
   width: 100%;
 }
-.back {
-  transition: all 1s ease-in-out;
+.card .back {
   transform: rotateY(180deg);
 }
+.card-flip {
+  transform: rotateY(180deg);
+}
+
