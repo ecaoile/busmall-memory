@@ -4,6 +4,7 @@ Product.allProducts = [];
 
 var tableLevel = 6; // Prints out 6x6 table
 
+var waitTime = 2000; // time before cards flip
 var imgsDisplayed = [];
 //find our table id="memory-game"
 var memoryTable = document.getElementById('memory-game');
@@ -68,7 +69,6 @@ var randImgIndex = '';
 
 function createRandImgIndex() {
   randImgIndex = Math.floor(Math.random() * Product.allProducts.length);
-  console.log(randImgIndex);
   return randImgIndex;
 }
 
@@ -89,7 +89,6 @@ function renderGame() {
     for (var j = 0; j < 2; j++) {
       // if it has nothing in it the 'console.log();'
       while (tableCellsArray[randTdIndex].innerHTML) {
-        console.log('THis td has stuff');
         createRandTdIndex();
       }
 
@@ -100,20 +99,30 @@ function renderGame() {
           <div class="side">\
             <img src="../img/bus-mall-card-over.png" alt="Bus Mall Placeholder">\
           </div>\
-          <div class="side back">\
+          <div class="side">\
             <img src="' + Product.allProducts[randImgIndex].filePath + '" alt="' + Product.allProducts[randImgIndex].imgName + '" />\
           </div>\
         </div>\
       </div>';
     }
     imgsDisplayed.push(Product.allProducts[randImgIndex].imgName);
-    console.log(imgsDisplayed);
   }
 }
 renderGame();
 
 // flip the cards so the placeholder shows
+function flipCardsOnLoad() {
+  var tdlist = memoryTable.getElementsByTagName('td');
+  console.log(tdlist);
+  for (var i = 0; i < tdlist.length; i++) {
+    var sideclass = tdlist[i].getElementsByClassName('side')[1];
+    console.log(sideclass);
+    sideclass.classList.toggle('back');
+    // sideclass.className = 'side back';
+  }
+}
 
+setTimeout( flipCardsOnLoad, waitTime);
 // on click flip card back to show image
 //  add an event lister to the table
 //  get name of image on click 1
