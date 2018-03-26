@@ -94,7 +94,17 @@ function renderGame() {
       }
 
       var randTdElement = tableCellsArray[randTdIndex];
-      randTdElement.innerHTML = '<img src="' + Product.allProducts[randImgIndex].filePath + '" alt="' + Product.allProducts[randImgIndex].imgName + '" />';
+      randTdElement.innerHTML =
+      '<div class="card-container">\
+        <div class="card">\
+          <div class="side">\
+            <img src="../img/bus-mall-card-over.png" alt="Bus Mall Placeholder">\
+          </div>\
+          <div class="side back">\
+            <img src="' + Product.allProducts[randImgIndex].filePath + '" alt="' + Product.allProducts[randImgIndex].imgName + '" />\
+          </div>\
+        </div>\
+      </div>';
     }
     imgsDisplayed.push(Product.allProducts[randImgIndex].imgName);
     console.log(imgsDisplayed);
@@ -102,25 +112,13 @@ function renderGame() {
 }
 renderGame();
 
-// first cannot equal second
+// flip the cards so the placeholder shows
 
-// random for img
-
-// use first random index to place image in first td
-
-// use second random index to place image in second td
-
-// while (!tableCellsArray[randTdIndex].innerHTML === '') {
-//   // then run random number again
-// }
-
-
-
-// one picture in a random td
-
-// same picture in another random td
-
-// random td can't equal last td
-
-
+// on click flip card back to show image
+//  add an event lister to the table
+//  get name of image on click 1
+//  get name of image on click 2
+//  compart click 1 and click 2
+//  if true stay flipped
+// if false flip both back and lives--
 
