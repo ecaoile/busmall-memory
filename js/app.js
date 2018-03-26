@@ -32,5 +32,58 @@ new Product ('Banana Slug Mask', '../img/banana-slug-mask.jpg', '/products.html#
 new Product ('Cat Butt Gum', '../img/cat-butt-gum.jpg', '/products.html#cat-butt-gum');
 
 //array of table's td
+var tableCellsArray = memoryTable.getElementsByTagName('td');
+
+var randTdIndex = 0;
+// first random index number for td
+function createRandTdIndex() {
+  randTdIndex = Math.floor(Math.random() * tableCellsArray.length);
+  return randTdIndex;
+}
+createRandTdIndex();
+
+var randImgIndex = '';
+
+function createRandImgIndex() {
+  randImgIndex = Math.floor(Math.random() * Product.allProducts.length);
+  return randImgIndex;
+}
+createRandImgIndex();
+
+
+function renderGame() {
+  // if it has nothing in it the 'console.log();'
+  if (tableCellsArray[randTdIndex].innerHTML) {
+    console.log('THis td has stuff');
+    createRandTdIndex();
+  }
+
+
+
+  var randTdElement = tableCellsArray[randTdIndex];
+  randTdElement.innerHTML = '<img src="' + Product.allProducts[randImgIndex].filePath + '" alt="' + Product.allProducts[randImgIndex].imgName + '" />';
+}
+renderGame();
+
+// first cannot equal second
+
+// random for img
+
+// use first random index to place image in first td
+
+// use second random index to place image in second td
+
+// while (!tableCellsArray[randTdIndex].innerHTML === '') {
+//   // then run random number again
+// }
+
+
+
+// one picture in a random td
+
+// same picture in another random td
+
+// random td can't equal last td
+
 
 
