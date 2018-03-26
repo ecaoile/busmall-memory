@@ -1,0 +1,8 @@
+#memory-game td img {
+  height: 200px;
+}
+
+#memory-game {
+  display: block;
+  margin: 0 auto;
+}
