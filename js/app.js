@@ -2,10 +2,26 @@
 
 Product.allProducts = [];
 
-var tableLevel = 4; // Prints out 6x6 table
+var tableLevel = 2; // Prints out 6x6 table
 var lives = 3;
-var waitTime = 2000; // time before cards flip
+var livesContainer = document.getElementById('lives');
+
+var beginWaitTime = 2000; // time before cards flip
+var flipWaitTime = 1500;
+var cardsMatched = 0; // Counter for num cards matched
 var imgsDisplayed = [];
+
+var timer = 0;
+var timerContainer = document.getElementById('timer');
+var runningTime;
+function displayTimer() {
+  timer++;
+  timerContainer.textContent = timer;
+}
+setTimeout(() => {
+  runningTime = setInterval(displayTimer, 1000);
+}, beginWaitTime);
+
 //find our table id="memory-game"
 var memoryTable = document.getElementById('memory-game');
 
@@ -14,7 +30,6 @@ var clickedCard1;
 var flipped = false;
 
 // Create Table
-
 for (var i = 0; i < tableLevel; i++) {
   var trElement = document.createElement('tr');
   for (var j = 0; j < tableLevel; j++) {
@@ -61,6 +76,9 @@ new Product ('World Domination Notebook', '../img/world-domination-notebook.jpg'
 //array of table's td
 var tableCellsArray = memoryTable.getElementsByTagName('td');
 
+// Num images used
+var numUniqueImages = Math.floor(tableCellsArray.length / 2);
+
 var randTdIndex = 0;
 // first random index number for td
 function createRandTdIndex() {
@@ -79,8 +97,10 @@ function createRandImgIndex() {
 
 function renderGame() {
 
+  livesContainer.textContent = lives;
+
   // for loop to fill whole table
-  var numUniqueImages = Math.floor(tableCellsArray.length / 2);
+  numUniqueImages = Math.floor(tableCellsArray.length / 2);
 
   for (var i = 0; i < numUniqueImages; i++ ) {
 
@@ -89,7 +109,7 @@ function renderGame() {
     while (imgsDisplayed.includes(Product.allProducts[randImgIndex].imgName)) {
       createRandImgIndex();
     }
-
+    // TODO = display link
     for (var j = 0; j < 2; j++) {
       // if it has nothing in it the 'console.log();'
       while (tableCellsArray[randTdIndex].innerHTML) {
@@ -142,7 +162,7 @@ function flipCardsOnLoad() {
   }
 }
 
-setTimeout( flipCardsOnLoad, waitTime);
+setTimeout( flipCardsOnLoad, beginWaitTime);
 // on click flip card back to show image
 
 var classForClick = document.getElementsByClassName('card');
@@ -152,8 +172,6 @@ for ( var k in classForClick){
 }
 
 function handleClick1(event) {
-
-  console.log(flipped);
 
   if(!flipped) {
 
@@ -165,7 +183,7 @@ function handleClick1(event) {
 
     clickedCard1.removeEventListener('click', handleClick1);
     flipped = true;
-    console.log(flipped);
+
     return imgClick1, clickedCard1;
 
   } else {
@@ -182,30 +200,61 @@ function handleClick1(event) {
       // change classes on divs
       clickedCard1.className= 'card-matched';
       clickedCard2.className = 'card-matched';
-      flipped = false;
+
       clickedCard1.removeEventListener('click', handleClick1);
       clickedCard2.removeEventListener('click', handleClick1);
+
+      cardsMatched++;
+
+      setTimeout(() => {
+
+        if (cardsMatched === numUniqueImages) {
+          var endGameDiv = document.getElementById('end-of-game');
+          endGameDiv.style.display = 'inherit';
+          // TODO = Break Line in win message
+          var endOfGameMessage = document.getElementById('end-of-game-message');
+          endOfGameMessage.textContent = 'You are awesome because you won!! You finished in ' + timer + ' seconds';
+
+          clearInterval(runningTime);
+        }
+
+      }, 1500);
+
+      flipped = false;
       return;
+
     } else {
 
       setTimeout(function() {
         clickedCard1.classList.toggle('card-flip');
         clickedCard2.classList.toggle('card-flip');
-      }, 1000);
+      }, flipWaitTime);
 
       clickedCard1.addEventListener('click', handleClick1);
       lives--;
+      setTimeout(() => {
+        livesContainer.classList.toggle('life-lost');
+        livesContainer.textContent = lives;
+        // livesContainer.classList.toggle('life-lost');
+      }, 1000);
 
+      if (lives === 0) {
+        setTimeout(() => {
+          var endGameDiv = document.getElementById('end-of-game');
+          endGameDiv.style.display = 'inherit';
+
+          var endOfGameMessage = document.getElementById('end-of-game-message');
+          endOfGameMessage.textContent = 'You are awesome but you ran out of lives';
+        }, 2000);
+      }
       console.log(lives);
       flipped = false;
-      return;
     }
-
   }
-
-
-  // flip the cards
-  // decrement lives-
 }
+
+// Get Values Username, Difficulty
+// We need to save Won, Lost, Timer
+
 
 

@@ -9,9 +9,39 @@
   <link rel="stylesheet" href="../css/game-style.css">
 </head>
 <body>
-
   <h1>BusMall Memory Game</h1>
+    <nav id="busmall-nav">
+      <ul>
+        <li>
+          <a href="index.html"> Home </a>
+        </li>
+        <li>
+          <a href="results.html"> Results </a>
+        </li>
+        <li>
+          <a href="products.html"> Products </a>
+        </li>
+        <li>
+          <a href="about_us.html"> About Us </a>
+        </li>
+      </ul>
+    </nav>
+    <nav id="game-status-bar">
+      <ul>
+        <li>Time:<span id="timer"></span></li>
+        <li>Lives:<span id="lives"></span></li>
+      </ul>
+    </nav>
+  <section id="game-container">
     <table id="memory-game"></table>
+
+    <div id="end-of-game">
+      <header id="end-of-game-message">You lost.</header>
+      <button id="play-button"><a href="game.html">Play Again?</a></button>
+      <button><a href="results.html">View Results</a></button>
+      <button><a href="products.html">Go to Product Page</a></button>
+    </div>
+  </section>
   
   <script src="../js/app.js"></script>
 </body>
