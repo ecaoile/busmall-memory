@@ -2,7 +2,7 @@
 
 Product.allProducts = [];
 
-var tableLevel = 4; // Prints out 6x6 table
+var tableLevel = 6; // Prints out 6x6 table
 
 var waitTime = 2000; // time before cards flip
 var imgsDisplayed = [];
@@ -35,24 +35,24 @@ new Product ('Cat Butt Gum', '../img/cat-butt-gum.jpg', '/products.html#cat-butt
 new Product ('Creepy Horse Man', '../img/creepy-horse-man.jpg', '/products.html#creepy-horse-man.jpg');
 new Product ('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', '/product.html#cupcake-lip-balm');
 new Product ('Dog Beers', '../img/dog-beers.jpg', '/product.html#dog-beers');
-new Product('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', '/product.html#donald-trump-toilet-paper');
-new Product('Emergency Unicorn', '../img/emergency-unicorn.jpg', '/product.html#emergency-unicorn');
-new Product('Fez Bigfoot', '../img/fez-bigfoot.jpg', '/product.html#fez-bigfoot');
-new Product('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', '/product.html#glow-finger-tentacles');
-new Product('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', '/product.html#inflatable-unicorn-horn-cats');
-new Product('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', '/product.html#instant-clip-on-man-bun');
-new Product('Macho Tissues', '../img/macho-tissues.jpg', '/product.html#macho-tissues');
-new Product('Nose Flute', '../img/nose-flute.jpg', '/product.html#nose-flute');
-new Product('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', '/products.html#rubber-chicken-socks-feet');
-new Product('Skeleton Scarf', '../img/skeleton-scarf.jpg', '/product.html#skeleton-scarf');
-new Product('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', '/product.html#squirrel-underpants-ornament');
-new Product('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', '/product.html#surprise-treasure-box');
-new Product('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', '/product.html#tech-monks-teacups.jpg');
-new Product('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', '/product.html#tin-foil-hat-for-cats');
-new Product('Unicorn Hooves', '../img/unicorn-hooves.jpg', '/product.html#unicorn-hooves');
-new Product('Unicorn Mints', '../img/unicorn-mints.jpg', '/product.html#unicorn-mints');
-new Product('Uranus Soap', '../img/uranus-soap.jpg', '/product.html#uranus-soap');
-new Product('World Domination Notebook', '../img/world-domination-notebook.jpg', '/product.html#world-domination-notebook');
+new Product ('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', '/product.html#donald-trump-toilet-paper');
+new Product ('Emergency Unicorn', '../img/emergency-unicorn.jpg', '/product.html#emergency-unicorn');
+new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', '/product.html#fez-bigfoot');
+new Product ('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', '/product.html#glow-finger-tentacles');
+new Product ('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', '/product.html#inflatable-unicorn-horn-cats');
+new Product ('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', '/product.html#instant-clip-on-man-bun');
+new Product ('Macho Tissues', '../img/macho-tissues.jpg', '/product.html#macho-tissues');
+new Product ('Nose Flute', '../img/nose-flute.jpg', '/product.html#nose-flute');
+new Product ('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', '/products.html#rubber-chicken-socks-feet');
+new Product ('Skeleton Scarf', '../img/skeleton-scarf.jpg', '/product.html#skeleton-scarf');
+new Product ('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', '/product.html#squirrel-underpants-ornament');
+new Product ('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', '/product.html#surprise-treasure-box');
+new Product ('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', '/product.html#tech-monks-teacups.jpg');
+new Product ('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', '/product.html#tin-foil-hat-for-cats');
+new Product ('Unicorn Hooves', '../img/unicorn-hooves.jpg', '/product.html#unicorn-hooves');
+new Product ('Unicorn Mints', '../img/unicorn-mints.jpg', '/product.html#unicorn-mints');
+new Product ('Uranus Soap', '../img/uranus-soap.jpg', '/product.html#uranus-soap');
+new Product ('World Domination Notebook', '../img/world-domination-notebook.jpg', '/product.html#world-domination-notebook');
 
 //array of table's td
 var tableCellsArray = memoryTable.getElementsByTagName('td');
@@ -93,17 +93,35 @@ function renderGame() {
       }
 
       var randTdElement = tableCellsArray[randTdIndex];
-      randTdElement.innerHTML =
-      '<div class="card-container">\
-        <div class="card">\
-          <div class="side back">\
-            <img src="../img/bus-mall-card-over.png" alt="Bus Mall Placeholder">\
-          </div>\
-          <div class="side">\
-            <img src="' + Product.allProducts[randImgIndex].filePath + '" alt="' + Product.allProducts[randImgIndex].imgName + '" />\
-          </div>\
-        </div>\
-      </div>';
+      // randTdElement.innerHTML
+      var divElement1 = document.createElement('div');
+      divElement1.className = 'card-container';
+
+      var divElement2 = document.createElement('div');
+      divElement2.className = 'card ' + Product.allProducts[randImgIndex].filePath;
+
+      var divElement3 = document.createElement('div');
+      divElement3.className = 'side back';
+
+      var placeholderImgEl = document.createElement('img');
+      placeholderImgEl.src = '../img/bus-mall-card-over.png';
+      placeholderImgEl.alt = 'Bus Mall Placeholder';
+
+      divElement3.appendChild(placeholderImgEl);
+      divElement2.appendChild(divElement3);
+
+      var divElement4 = document.createElement('div');
+      divElement4.className = 'side';
+
+      var randomImgEl = document.createElement('img');
+      randomImgEl.src = Product.allProducts[randImgIndex].filePath;
+      randomImgEl.alt = Product.allProducts[randImgIndex].imgName;
+
+      divElement4.appendChild(randomImgEl);
+      divElement2.appendChild(divElement4);
+      divElement1.appendChild(divElement2);
+
+      randTdElement.appendChild(divElement1);
     }
     imgsDisplayed.push(Product.allProducts[randImgIndex].imgName);
   }
