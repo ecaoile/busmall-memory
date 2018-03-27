@@ -10,8 +10,36 @@ if (usableUserName && usableUserName.length) {
   username = 'Dave';
 }
 
+var storedDifficulty = localStorage.getItem('busmall.difficulty');
+var usableDifficulty = JSON.parse(storedDifficulty);
+if (usableDifficulty && usableDifficulty.length) {
+  if (usableDifficulty === 'easy') {
+    var tableLevel = 2;
+  } else if (usableDifficulty === 'medium') {
+    tableLevel = 4;
+  } else if (usableDifficulty === 'hard') {
+    tableLevel = 6;
+  }
+} else {
+  tableLevel = 2;
+}
 
-var tableLevel = 2; // Prints out 6x6 table
+var storedWins = localStorage.getItem('busmall.wins');
+var usableWins = JSON.parse(storedWins);
+if (usableWins && usableWins.length) {
+  var wins = usableWins;
+} else {
+  wins = 0;
+}
+
+var storedLosses = localStorage.getItem('busmall.losses');
+var usableLosses = JSON.parse(storedLosses);
+if (usableLosses && usableLosses.length) {
+  var losses = usableLosses;
+} else {
+  losses = 0;
+}
+
 var lives = 3;
 var livesContainer = document.getElementById('lives');
 
@@ -37,6 +65,7 @@ var memoryTable = document.getElementById('memory-game');
 var imgClick1;
 var clickedCard1;
 var flipped = false;
+
 
 // Create Table
 for (var i = 0; i < tableLevel; i++) {
@@ -218,9 +247,9 @@ function handleClick1(event) {
 
       cardsMatched++;
 
-      setTimeout(() => {
-
-        if (cardsMatched === numUniqueImages) {
+      if (cardsMatched === numUniqueImages) {
+        wins++;
+        setTimeout(() => {
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
           // TODO = Break Line in win message
@@ -228,9 +257,10 @@ function handleClick1(event) {
           endOfGameMessage.innerHTML = username + '</br>You are awesome because you won!! <br/> You finished in ' + timer + ' seconds';
 
           clearInterval(runningTime);
-        }
+        }, 1500);
+      }
 
-      }, 1500);
+
 
       flipped = false;
       return;
@@ -251,12 +281,14 @@ function handleClick1(event) {
       }, 1000);
 
       if (lives === 0) {
+        losses++;
         setTimeout(() => {
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
 
           var endOfGameMessage = document.getElementById('end-of-game-message');
           endOfGameMessage.innerHTML = username + '<br/>You are awesome but you ran out of lives';
+
         }, 2000);
       }
       console.log(lives);
@@ -265,7 +297,6 @@ function handleClick1(event) {
   }
 }
 
-// Get Values Username, Difficulty
 // We need to save Won, Lost, Timer
 
 
