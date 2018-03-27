@@ -3,7 +3,7 @@ body {
 }
 
 header {
-background-color: #171d1c;
+background-color: #415a77;
 }
 
 logo {
@@ -17,9 +17,12 @@ margin: 0;
 padding: 0;
 list-style-type: none;
 text-align: center;
+
 }
 
-#navcontainer ul li { display: inline; }
+#navcontainer ul li { 
+    display: inline; 
+}
 
 
 
@@ -44,3 +47,11 @@ h1
     font-family: 'Fascinate Inline', cursive;
 }
 
+.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+}
