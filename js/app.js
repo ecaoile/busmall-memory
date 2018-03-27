@@ -2,12 +2,16 @@
 
 Product.allProducts = [];
 
-var tableLevel = 6; // Prints out 6x6 table
-
+var tableLevel = 4; // Prints out 6x6 table
+var lives = 3;
 var waitTime = 2000; // time before cards flip
 var imgsDisplayed = [];
 //find our table id="memory-game"
 var memoryTable = document.getElementById('memory-game');
+
+var imgClick1;
+var clickedCard1;
+var flipped = false;
 
 // Create Table
 
@@ -98,14 +102,14 @@ function renderGame() {
       divElement1.className = 'card-container';
 
       var divElement2 = document.createElement('div');
-      divElement2.className = 'card ' + Product.allProducts[randImgIndex].filePath;
+      divElement2.className = 'card';
 
       var divElement3 = document.createElement('div');
       divElement3.className = 'side back';
 
       var placeholderImgEl = document.createElement('img');
       placeholderImgEl.src = '../img/bus-mall-card-over.png';
-      placeholderImgEl.alt = 'Bus Mall Placeholder';
+      placeholderImgEl.alt = Product.allProducts[randImgIndex].imgName;
 
       divElement3.appendChild(placeholderImgEl);
       divElement2.appendChild(divElement3);
@@ -141,40 +145,67 @@ function flipCardsOnLoad() {
 setTimeout( flipCardsOnLoad, waitTime);
 // on click flip card back to show image
 
-memoryTable.addEventListener('click', handleClick1);
+var classForClick = document.getElementsByClassName('card');
+
+for ( var k in classForClick){
+  classForClick[k].addEventListener('click', handleClick1);
+}
 
 function handleClick1(event) {
 
-  if (event.target.nodeName === 'IMG') {
-    var cardContainer = event.path[2];
-    cardContainer.classList.toggle('card-flip');
+  console.log(flipped);
 
-    var imgClick1 = event.path[2].children[1].children[0].alt;
+  if(!flipped) {
+
+    imgClick1 = event.target.alt;
     console.log(imgClick1);
 
-    // memoryTable.addEventListener('click', handleClick2);
+    clickedCard1 = event.path[2];
+    clickedCard1.classList.toggle('card-flip');
 
-    // function handleClick2 () {
-    //   if (event.target.nodeName === 'IMG') {
-    //     var cardContainer = event.path[2];
-    //     cardContainer.classList.toggle('card-flip');
+    clickedCard1.removeEventListener('click', handleClick1);
+    flipped = true;
+    console.log(flipped);
+    return imgClick1, clickedCard1;
 
-    //     imgClick2 = event.path[2].children[1].children[0].alt;
+  } else {
 
-    //     return imgClick2;
-    //   }
-    //   console.log(imgClick1, imgClick2);
-    // }
+    var imgClick2 = event.target.alt;
+    console.log(imgClick1, imgClick2);
 
+    var clickedCard2 = event.path[2];
+    clickedCard2.classList.toggle('card-flip');
 
+    if(imgClick1 === imgClick2) {
+      console.log('It\'s a match!');
+      // keep them flipped
+      // change classes on divs
+      clickedCard1.className= 'card-matched';
+      clickedCard2.className = 'card-matched';
+      flipped = false;
+      clickedCard1.removeEventListener('click', handleClick1);
+      clickedCard2.removeEventListener('click', handleClick1);
+      return;
+    } else {
+
+      setTimeout(function() {
+        clickedCard1.classList.toggle('card-flip');
+        clickedCard2.classList.toggle('card-flip');
+      }, 1000);
+
+      clickedCard1.addEventListener('click', handleClick1);
+      lives--;
+
+      console.log(lives);
+      flipped = false;
+      return;
+    }
 
   }
+
+
+  // flip the cards
+  // decrement lives-
 }
 
-//  add an event lister to the table
-//  get name of image on click 1
-//  get name of image on click 2
-//  compart click 1 and click 2
-//  if true stay flipped
-// if false flip both back and lives--
 

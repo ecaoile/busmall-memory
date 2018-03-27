@@ -17,7 +17,7 @@ td {
   position: relative;
   width: 150px;
 }
-.card {
+.card, .card-matched {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
@@ -27,13 +27,13 @@ td {
 /* .card:hover {
   transform: rotateY(180deg);
 } */
-.card .side {
+.card .side, .card-matched .side {
   backface-visibility: hidden;
   height: 100%;
   position: absolute;
   width: 100%;
 }
-.card .back {
+.card .back, .card-matched .back {
   transform: rotateY(180deg);
 }
 .card-flip {
