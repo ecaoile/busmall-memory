@@ -26,7 +26,7 @@ if (usableDifficulty && usableDifficulty.length) {
 
 var storedWins = localStorage.getItem('busmall.wins');
 var usableWins = JSON.parse(storedWins);
-if (usableWins && usableWins.length) {
+if (usableWins) {
   var wins = usableWins;
 } else {
   wins = 0;
@@ -34,10 +34,17 @@ if (usableWins && usableWins.length) {
 
 var storedLosses = localStorage.getItem('busmall.losses');
 var usableLosses = JSON.parse(storedLosses);
-if (usableLosses && usableLosses.length) {
+if (usableLosses) {
   var losses = usableLosses;
 } else {
   losses = 0;
+}
+var storedTimes = localStorage.getItem('busmall.winTimes');
+var usableTimes = JSON.parse(storedTimes);
+if (usableTimes && usableTimes.length) {
+  var winTimes = usableTimes;
+} else {
+  winTimes = [];
 }
 
 var lives = 3;
@@ -248,7 +255,6 @@ function handleClick1(event) {
       cardsMatched++;
 
       if (cardsMatched === numUniqueImages) {
-        wins++;
         setTimeout(() => {
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
@@ -257,10 +263,11 @@ function handleClick1(event) {
           endOfGameMessage.innerHTML = username + '</br>You are awesome because you won!! <br/> You finished in ' + timer + ' seconds';
 
           clearInterval(runningTime);
+          wins++;
+          winTimes.push(timer);
+          saveToLocalStorage();
         }, 1500);
       }
-
-
 
       flipped = false;
       return;
@@ -290,14 +297,28 @@ function handleClick1(event) {
           endOfGameMessage.innerHTML = username + '<br/>You are awesome but you ran out of lives';
 
         }, 2000);
+
+        saveToLocalStorage();
+
       }
+
       console.log(lives);
       flipped = false;
     }
   }
 }
 
-// We need to save Won, Lost, Timer
+function saveToLocalStorage() {
+  var jsonWins = JSON.stringify(wins);
+  localStorage.setItem('busmall.wins', jsonWins);
+
+  var jsonLoses = JSON.stringify(losses);
+  localStorage.setItem('busmall.losses', jsonLoses);
+
+  var jsonTimes = JSON.stringify(winTimes);
+  console.log(jsonTimes);
+  localStorage.setItem('busmall.winTimes', jsonTimes);
+}
 
 
 
