@@ -2,7 +2,7 @@
 
 Product.allProducts = [];
 
-var tableLevel = 6; // Prints out 6x6 table
+var tableLevel = 4; // Prints out 6x6 table
 
 var waitTime = 2000; // time before cards flip
 var imgsDisplayed = [];
@@ -123,16 +123,34 @@ function flipCardsOnLoad() {
 setTimeout( flipCardsOnLoad, waitTime);
 // on click flip card back to show image
 
-memoryTable.addEventListener('click', handleClick);
+memoryTable.addEventListener('click', handleClick1);
 
-function handleClick(event) {
+function handleClick1(event) {
 
   if (event.target.nodeName === 'IMG') {
     var cardContainer = event.path[2];
     cardContainer.classList.toggle('card-flip');
+
+    var imgClick1 = event.path[2].children[1].children[0].alt;
+    console.log(imgClick1);
+
+    // memoryTable.addEventListener('click', handleClick2);
+
+    // function handleClick2 () {
+    //   if (event.target.nodeName === 'IMG') {
+    //     var cardContainer = event.path[2];
+    //     cardContainer.classList.toggle('card-flip');
+
+    //     imgClick2 = event.path[2].children[1].children[0].alt;
+
+    //     return imgClick2;
+    //   }
+    //   console.log(imgClick1, imgClick2);
+    // }
+
+
+
   }
-
-
 }
 
 //  add an event lister to the table
