@@ -2,6 +2,15 @@
 
 Product.allProducts = [];
 
+var storedUserName = localStorage.getItem('busmall.playername');
+var usableUserName = JSON.parse(storedUserName);
+if (usableUserName && usableUserName.length) {
+  var username = usableUserName;
+} else {
+  username = 'Dave';
+}
+
+
 var tableLevel = 2; // Prints out 6x6 table
 var lives = 3;
 var livesContainer = document.getElementById('lives');
@@ -48,30 +57,30 @@ function Product(imgName, filePath, link) {
 }
 // Create Instances
 // new Product(imgName, filePath, link);
-new Product ('Bacon Beans', '../img/bacon-beans.jpg', '/products.html#bacon-beans');
-new Product ('Banana Slug Mask', '../img/banana-slug-mask.jpg', '/products.html#banana-slug-mask');
-new Product ('Cat Butt Gum', '../img/cat-butt-gum.jpg', '/products.html#cat-butt-gum');
-new Product ('Creepy Horse Man', '../img/creepy-horse-man.jpg', '/products.html#creepy-horse-man.jpg');
-new Product ('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', '/product.html#cupcake-lip-balm');
-new Product ('Dog Beers', '../img/dog-beers.jpg', '/product.html#dog-beers');
-new Product ('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', '/product.html#donald-trump-toilet-paper');
-new Product ('Emergency Unicorn', '../img/emergency-unicorn.jpg', '/product.html#emergency-unicorn');
-new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', '/product.html#fez-bigfoot');
-new Product ('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', '/product.html#glow-finger-tentacles');
-new Product ('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', '/product.html#inflatable-unicorn-horn-cats');
-new Product ('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', '/product.html#instant-clip-on-man-bun');
-new Product ('Macho Tissues', '../img/macho-tissues.jpg', '/product.html#macho-tissues');
-new Product ('Nose Flute', '../img/nose-flute.jpg', '/product.html#nose-flute');
-new Product ('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', '/products.html#rubber-chicken-socks-feet');
-new Product ('Skeleton Scarf', '../img/skeleton-scarf.jpg', '/product.html#skeleton-scarf');
-new Product ('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', '/product.html#squirrel-underpants-ornament');
-new Product ('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', '/product.html#surprise-treasure-box');
-new Product ('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', '/product.html#tech-monks-teacups.jpg');
-new Product ('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', '/product.html#tin-foil-hat-for-cats');
-new Product ('Unicorn Hooves', '../img/unicorn-hooves.jpg', '/product.html#unicorn-hooves');
-new Product ('Unicorn Mints', '../img/unicorn-mints.jpg', '/product.html#unicorn-mints');
-new Product ('Uranus Soap', '../img/uranus-soap.jpg', '/product.html#uranus-soap');
-new Product ('World Domination Notebook', '../img/world-domination-notebook.jpg', '/product.html#world-domination-notebook');
+new Product ('Bacon Beans', '../img/bacon-beans.jpg', './products.html#bacon-beans');
+new Product ('Banana Slug Mask', '../img/banana-slug-mask.jpg', './products.html#banana-slug-mask');
+new Product ('Cat Butt Gum', '../img/cat-butt-gum.jpg', './products.html#cat-butt-gum');
+new Product ('Creepy Horse Man', '../img/creepy-horse-man.jpg', './products.html#creepy-horse-man.jpg');
+new Product ('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', './products.html#cupcake-lip-balm');
+new Product ('Dog Beers', '../img/dog-beers.jpg', './products.html#dog-beers');
+new Product ('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', './products.html#donald-trump-toilet-paper');
+new Product ('Emergency Unicorn', '../img/emergency-unicorn.jpg', './products.html#emergency-unicorn');
+new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', './products.html#fez-bigfoot');
+new Product ('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', './products.html#glow-finger-tentacles');
+new Product ('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', './products.html#inflatable-unicorn-horn-cats');
+new Product ('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', './products.html#instant-clip-on-man-bun');
+new Product ('Macho Tissues', '../img/macho-tissues.jpg', './products.html#macho-tissues');
+new Product ('Nose Flute', '../img/nose-flute.jpg', './products.html#nose-flute');
+new Product ('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', './products.html#rubber-chicken-socks-feet');
+new Product ('Skeleton Scarf', '../img/skeleton-scarf.jpg', './products.html#skeleton-scarf');
+new Product ('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', './products.html#squirrel-underpants-ornament');
+new Product ('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', './products.html#surprise-treasure-box');
+new Product ('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', './products.html#tech-monks-teacups.jpg');
+new Product ('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', './products.html#tin-foil-hat-for-cats');
+new Product ('Unicorn Hooves', '../img/unicorn-hooves.jpg', './products.html#unicorn-hooves');
+new Product ('Unicorn Mints', '../img/unicorn-mints.jpg', './products.html#unicorn-mints');
+new Product ('Uranus Soap', '../img/uranus-soap.jpg', './products.html#uranus-soap');
+new Product ('World Domination Notebook', '../img/world-domination-notebook.jpg', './products.html#world-domination-notebook');
 
 //array of table's td
 var tableCellsArray = memoryTable.getElementsByTagName('td');
@@ -109,7 +118,6 @@ function renderGame() {
     while (imgsDisplayed.includes(Product.allProducts[randImgIndex].imgName)) {
       createRandImgIndex();
     }
-    // TODO = display link
     for (var j = 0; j < 2; j++) {
       // if it has nothing in it the 'console.log();'
       while (tableCellsArray[randTdIndex].innerHTML) {
@@ -141,7 +149,11 @@ function renderGame() {
       randomImgEl.src = Product.allProducts[randImgIndex].filePath;
       randomImgEl.alt = Product.allProducts[randImgIndex].imgName;
 
+      var linkEl = document.createElement('a');
+      linkEl.href = Product.allProducts[randImgIndex].link;
+
       divElement4.appendChild(randomImgEl);
+      divElement4.appendChild(linkEl);
       divElement2.appendChild(divElement4);
       divElement1.appendChild(divElement2);
 
@@ -213,7 +225,7 @@ function handleClick1(event) {
           endGameDiv.style.display = 'inherit';
           // TODO = Break Line in win message
           var endOfGameMessage = document.getElementById('end-of-game-message');
-          endOfGameMessage.textContent = 'You are awesome because you won!! You finished in ' + timer + ' seconds';
+          endOfGameMessage.innerHTML = username + '</br>You are awesome because you won!! <br/> You finished in ' + timer + ' seconds';
 
           clearInterval(runningTime);
         }
@@ -244,7 +256,7 @@ function handleClick1(event) {
           endGameDiv.style.display = 'inherit';
 
           var endOfGameMessage = document.getElementById('end-of-game-message');
-          endOfGameMessage.textContent = 'You are awesome but you ran out of lives';
+          endOfGameMessage.innerHTML = username + '<br/>You are awesome but you ran out of lives';
         }, 2000);
       }
       console.log(lives);
