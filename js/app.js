@@ -113,10 +113,8 @@ renderGame();
 // flip the cards so the placeholder shows
 function flipCardsOnLoad() {
   var tdlist = memoryTable.getElementsByTagName('td');
-  console.log(tdlist);
   for (var i = 0; i < tdlist.length; i++) {
     var cardClass = tdlist[i].getElementsByClassName('card')[0];
-    console.log(cardClass);
     cardClass.classList.toggle('card-flip');
     // sideclass.className = 'side back';
   }
@@ -124,6 +122,19 @@ function flipCardsOnLoad() {
 
 setTimeout( flipCardsOnLoad, waitTime);
 // on click flip card back to show image
+
+memoryTable.addEventListener('click', handleClick);
+
+function handleClick(event) {
+
+  if (event.target.nodeName === 'IMG') {
+    var cardContainer = event.path[2];
+    cardContainer.classList.toggle('card-flip');
+  }
+
+
+}
+
 //  add an event lister to the table
 //  get name of image on click 1
 //  get name of image on click 2
