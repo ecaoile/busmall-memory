@@ -266,6 +266,20 @@ function handleClick1(event) {
           wins++;
           winTimes.push(timer);
           saveToLocalStorage();
+
+          var totalWins = document.getElementById('total-wins');
+          totalWins.textContent = wins;
+
+          var totalLosses = document.getElementById('total-losses');
+          totalLosses.textContent = losses;
+
+          var bestTime = document.getElementById('best-time');
+          var bestTimeArray = winTimes.sort(function (a, b) {
+            return a - b;
+          });
+          var bestTimeIndex = bestTimeArray[0];
+          bestTime.textContent = bestTimeIndex;
+
         }, 1500);
       }
 

@@ -79,3 +79,11 @@ td {
   background: red;
   transition: all .1s ease-in-out;
 }
+#end-of-game ul {
+  color: #171D1C;
+  font-size: 3em;
+  list-style-type: none;
+  width: 40%;
+  margin: 1em auto;
+  background: #E8F1F2;
+}
