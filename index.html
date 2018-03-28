@@ -2,13 +2,14 @@
 
 <head>
   <title> Bus Mall Home </title>
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:600|Source+Sans+Pro:600" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <header>
-    <nav>
+    <nav id="navcontainer">
       <ul>
         <li>
           <a href="index.html"> Home </a>
@@ -27,25 +28,23 @@
   </header>
 
 
-  <div id="logo">
-    <h1> Memory Game </h1>
-    <img src="">
-    <!-- This is where the busmall logo goes -->
+  <div id="IndexLogo">
+    <img src="./img/bus-mall-memory-logo.png" id="IndexLogo">
   </div>
 
   <div id="player">
-    <h2> Wanna play our memory game ? </h2>
+    <h1> Wanna play our memory game ? </h1>
 
     <input type="text" id="player-name" placeholder="Type your first name here" />
   </div>
 
   <div id="buttons">
-    <button id="submit"> Play </button>
+    <button id="submit-play"> Play </button>
 
-    <button id="play"> Results </button>
+    <button id="results"> Results </button>
   </div>
 
   <div id="footer"> Copyright &copy 2018 Bus-Ta Moves </div>
 
-  <script src="../js/app.js"></script>
+  <!-- <script src="../js/app.js"></script> -->
 </body>
