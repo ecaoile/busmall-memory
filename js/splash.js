@@ -6,7 +6,8 @@ function localStorageCheck() {
   if (usableStoredUserName && usableStoredUserName.length) {
     var initGreeting = document.getElementById('first-greeting');
     initGreeting.innerHTML = 'Welcome back, ' + usableStoredUserName + '! <br> Wanna play again?';
-
+    var placeholderText = document.getElementById('player-name');
+    placeholderText.placeholder = 'Wanna change your name ?';
   }
 }
 localStorageCheck();
