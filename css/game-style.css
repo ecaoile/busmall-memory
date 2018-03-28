@@ -76,6 +76,7 @@ td {
   transform-style: preserve-3d;
   transition: all 1s ease-in-out;
   width: 100%;
+  border: none;
 }
 .card-container:hover {
   transform: scale(1.01);
