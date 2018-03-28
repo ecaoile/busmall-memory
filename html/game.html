@@ -5,9 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Bus Mall Memory Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
   <link rel="stylesheet" href="../css/game-style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
     crossorigin="anonymous"></script>
 </head>
@@ -32,31 +33,41 @@
     </nav>
 
   </header>
-    <nav id="game-status-bar">
+  <section id="game-container">
+    <nav id="game-status-bar" class="fly-in-from-right">
       <ul>
-        <li>Time:<span id="timer"></span></li>
-        <li>Lives:<span id="lives"></span></li>
+        <li>Time:
+          <span id="timer"></span>
+        </li>
+        <li>Lives
+        </li>
+        <li>
+          <span id="hearts"></span>
+        </li>
       </ul>
     </nav>
-  <section id="game-container">
-    <table id="memory-game"></table>
+    <div id="table-container">
+      
+      <table id="memory-game"></table>
+  
+      <div id="end-of-game">
+        <header id="end-of-game-message">You lost.</header>
+        <ul>
+          <li>
+            Total Wins: <span id="total-wins"></span>
+          </li>
+          <li>
+            Total Losses: <span id="total-losses"></span>
+          </li>
+          <li>
+            Best Time: <span id="best-time"></span>
+          </li>
+        </ul>
+        <button id="play-button"><a href="game.html">Play Again?</a></button>
+        <button><a href="results.html">View Results</a></button>
+        <button><a href="products.html">Go to Product Page</a></button>
+      </div>
 
-    <div id="end-of-game">
-      <header id="end-of-game-message">You lost.</header>
-      <ul>
-        <li>
-          Total Wins: <span id="total-wins"></span>
-        </li>
-        <li>
-          Total Losses: <span id="total-losses"></span>
-        </li>
-        <li>
-          Best Time: <span id="best-time"></span>
-        </li>
-      </ul>
-      <button id="play-button"><a href="game.html">Play Again?</a></button>
-      <button><a href="results.html">View Results</a></button>
-      <button><a href="products.html">Go to Product Page</a></button>
     </div>
   </section>
   

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
       background-color: #a9bcd0;
   }
@@ -50,11 +54,11 @@ body {
       text: center;
       float: right;
       margin-top: 20px
-  
-    }
+ 
+}
 
    header {
-      background-color: #415a77;
+      background-color: #171D1C;
     
     }
   
@@ -85,73 +89,119 @@ body {
       border:1px solid #ccc;
       display:block;
       margin:1em auto;
-  }
-  
-  
-  header nav {
-    position: fixed;
-    padding: 0;
-    right: 0;
-    top: 0;
-    background: #004777;
-    display: block;
-  }
-  
+  }  
   logo {
       margin-right: 50%;
       padding: 0;
-  }
-  
-  #center {
-      text-align: center;
-      color: #415a77;
-      display: block;
-  
-  }
-  
-  #navcontainer{
-    right: 8px;
-    top: -40;
-    background: #004777;
-    
+}
+#center {
+    text-align: center;
+}
 
-  }
-  
-  #navcontainer ul {
-    margin: 0;
-    padding: 0;
-  
-  }
-  
-  #navcontainer ul li { 
-      display: inline-block; 
-      list-style-type: none;
-      padding: 1em;
-      transition: all .3s ease;
-      margin: 0;
-  }
-  
-  #navcontainer ul li a {
-    text-decoration: none;
-    font-family: 'Cabin', sans-serif;
-    text-transform: uppercase;
+header nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #004777;
+  z-index: 1;
+}
+
+#navcontainer ul {
+  margin: 0;
+  padding: 0;
+
+}
+
+#navcontainer ul li { 
+    display: inline-block; 
+    list-style-type: none;
     padding: 1em;
-    color: #fff;
-    font-size: 1em;
-    font-weight: 700;
-  }
-  
-  #navcontainer ul li a:hover {
-  background: #171D1C;
-  }
+    transition: all .3s ease;
+}
 
-  .logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
-    width: 250px;
-  }
+#navcontainer ul li a {
+  text-decoration: none;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+  padding: 1em;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+#navcontainer ul li a:hover {
+background: #171D1C;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  width: 250px;
+}
+
+img#IndexLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.5em;
+  width: 600px;
+ }
+
+#player h1 {
+  font-family: 'Cabin Condensed', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+text-align: center;
+text-decoration-color: #415a77;
+text-shadow: 0 2px whitesmoke;
+}
+div#sign-in-div {
+  text-align: center;
+}
+
+div#sign-in-div select {
+  display: block;
+  margin: auto;
+}
+
+
+div#player input#player-name {
+display: block;
+font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;  
+}
+
+div#buttons {
+  display: block;
+  margin-top: 4.5em;
+  text-align: center
+}
+
+button#submit-play, #results {
+background-color: #415a77;
+display: inline-block;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: .5em 5em;
+    text-decoration-color: whitesmoke;
+}
+
+#results {
+  display: none;
+}
+
+div#footer {
+  font-size: 10px;
+  margin-top: 5em;
+  text-align: center;
+} 
+
+p {
+  line-height: 1.25em;
+}
 
   h1 {
     font-size: 32px;
@@ -161,10 +211,6 @@ body {
   h2 {
     font-size: 24px;
     line-height: 1.5em;
-  }
-   
-  p {
-    line-height: 1.25em;
   }
   
 div#prod-page-title {
@@ -185,4 +231,22 @@ div#prod-page-title {
     border: .25em solid #A9BCD0;
   padding: .25em;
   background-color: #415A77;
+}
+
+div#results-display-text {
+  margin-top: 5em;
+  text-align: center;
   }
+
+  div #results-display-text h1 {
+  font-family: 'Cabin Condensed', sans-serif;
+  text-align: center;
+  text-decoration-color: #415a77;
+  text-shadow: 0 2px whitesmoke;
+  }
+
+  div #results-graphs {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}

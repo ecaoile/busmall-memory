@@ -1,46 +1,69 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <head>
   <title> Bus Mall Home </title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:600|Source+Sans+Pro:600" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-  <div id="nav">
-    <nav>
+  <header>
+    <nav id="navcontainer">
       <ul>
         <li>
           <a href="index.html"> Home </a>
         </li>
         <li>
-          <a href="results.html"> Results </a>
+          <a href="./html/results.html"> Results </a>
         </li>
         <li>
-          <a href="products.html"> Products </a>
+          <a href="./html/products.html"> Products </a>
         </li>
         <li>
-          <a href="about_us.html"> About Us </a>
+          <a href="./html/about_us.html"> About Us </a>
         </li>
       </ul>
     </nav>
-  </div>
+  </header>
 
-  <div id="logo">
-    <h1> Memory Game </h1>
-    <img src="">
-    <!-- This is where the busmall logo goes -->
+
+  <div id="IndexLogo">
+    <img src="./img/bus-mall-memory-logo.png" id="IndexLogo">
   </div>
 
   <div id="player">
-    <h2> Wanna play our memory game ? </h2>
+    <h1 id="first-greeting"> Wanna play our memory game ? </h1>
 
-    <input type="text" id="player-name" placeholder="Type your first name here" />
+    <div id="sign-in-div">
+      <form id="sign-in-form">
+        <fieldset>
+          <label for="userName"></label>
+          <input type="text" name="userName" id="player-name" placeholder="Type your first name here">
+
+          <label for="difficulty"></label>
+          <select name="difficulty">
+            <option value="easy"> Easy </option>
+            <option value="medium"> Medium </option>
+            <option value="hard"> Hard </option>
+          </select>
+
+          <button id="submit-play"> Play </button>
+        </fieldset>
+      </form>
+    </div>
+
   </div>
 
   <div id="buttons">
-    <button id="submit"> Play </button>
-
-    <button id="play"> Results </button>
+    <button id="results">
+      <a href="./html/results.html"> Results
+      </a>
+    </button>
   </div>
 
+
   <div id="footer"> Copyright &copy 2018 Bus-Ta Moves </div>
+
+  <script src="./js/splash.js"></script>
 </body>
