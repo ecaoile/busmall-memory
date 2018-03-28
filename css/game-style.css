@@ -1,21 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+h1, h2, h3, p, a, li {
+  font-family: 'Roboto', sans-serif;
+}
+
+header img {
+  width: 500px;
+  margin: 0 auto;
+  display: block;
+}
+header nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #004777;
+}
+header nav ul {
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 1.1em;
+  transition: all .3s ease;
+}
+header nav ul li:hover {
+  background: #171D1C;
+}
+header nav ul li a {
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav#game-status-bar {
+  text-align: center;
+}
+nav#game-status-bar ul {
+  padding: 0;
+}
+nav#game-status-bar ul li {
+  display: inline-block;
+      font-size: 2em;
+    font-weight: 900;
+}
 #memory-game td img {
   height: 100%;
   width: 100%;
+  border-radius: 15px;
+  box-shadow: 2px 2px 17px -4px #171D1C;
 }
 
 #memory-game {
-  display: block;
   margin: 0 auto;
 }
 td {
-  background: red;
-  padding: 2em;
+  padding: .5em;
 }
 .card-container {
-  height: 150px;
+  height: 191px;
   perspective: 600;
   position: relative;
   width: 150px;
+  transform: all .3s ease-in-out;
 }
 .card, .card-matched {
   height: 100%;
@@ -24,9 +77,10 @@ td {
   transition: all 1s ease-in-out;
   width: 100%;
 }
-/* .card:hover {
-  transform: rotateY(180deg);
-} */
+.card-container:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
 .card .side, .card-matched .side {
   backface-visibility: hidden;
   height: 100%;
@@ -38,6 +92,17 @@ td {
 }
 .card-flip {
   transform: rotateY(180deg);
+}
+.card .side a, .card-matched .side a {
+  backface-visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  color: #E8F1F2;
+  margin-right: .5em;
+  margin-bottom: .25em;
+  font-size: 1.5em;
 }
 #game-container {
   position:relative;

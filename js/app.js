@@ -21,7 +21,7 @@ if (usableDifficulty && usableDifficulty.length) {
     tableLevel = 6;
   }
 } else {
-  tableLevel = 2;
+  tableLevel = 6;
 }
 
 var storedWins = localStorage.getItem('busmall.wins');
@@ -187,6 +187,11 @@ function renderGame() {
 
       var linkEl = document.createElement('a');
       linkEl.href = Product.allProducts[randImgIndex].link;
+      linkEl.target = '_blank';
+
+      var iconEl = document.createElement('i');
+      iconEl.className = 'fas fa-info-circle';
+      linkEl.appendChild(iconEl);
 
       divElement4.appendChild(randomImgEl);
       divElement4.appendChild(linkEl);
