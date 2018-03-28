@@ -12,16 +12,17 @@ function imageClick(event) {
   console.log(event.target.src);
   if (event.target.src) {
     imgElement.src = event.target.src;
+    imgElement.className = 'clicked';
     fullSizeImageContainer.style.display = 'inherit';
     fullSizeImageContainer.appendChild(imgElement);
   }
 }
 
-var closeX = document.getElementById('close-x');
-closeX.addEventListener('click', xClick);
+//var closeX = document.getElementById('close-x');
+fullSizeImageContainer.addEventListener('click', xClick);
 
 function xClick(event) {
-  if (event.target) {
+  if (event.target.className !== 'clicked') {
     fullSizeImageContainer.style.display = 'none';
   }
 }
