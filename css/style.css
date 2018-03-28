@@ -29,10 +29,6 @@ body {
     margin:1em auto;
 }
 
-.card figure figcaption {
-    padding:.5em;
-    text-align:center;
-}
 
 header {
 background-color: #415a77;
@@ -45,6 +41,8 @@ logo {
 
 #center {
     text-align: center;
+    color: #415a77;
+
 }
 
 
