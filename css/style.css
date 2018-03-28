@@ -108,68 +108,37 @@ logo {
 }
 
 #container{
-    margin: 0;
-  padding: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #004777;
 }
 
-<<<<<<< HEAD
-
-#navcontainer ul
-{
-margin: 0;
-padding: 0;
-list-style-type: none;
-text-align: right;
-padding-top: 4px;
-
-
-=======
 #navcontainer ul {
   margin: 0;
   padding: 0;
-  list-style-type: none;
-  text-align: center;
-  padding-top: 4px;
->>>>>>> 8e8b030faba47718697dcb665404d22272604749
+
 }
 
 #navcontainer ul li { 
-    display: inline; 
-    margin: 0;
-    padding: 0;
+    display: inline-block; 
+    list-style-type: none;
+    padding: 1em;
+    transition: all .3s ease;
 }
 
 #navcontainer ul li a {
   text-decoration: none;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
   padding: 1em;
   color: #fff;
-  background-color: lightseagreen;
-  padding-top: 3px;
+  font-size: 1em;
+  font-weight: 700;
 }
 
-<<<<<<< HEAD
-
-#navcontainer ul li a
-{
-text-decoration: none;
-padding: 1em;
-color: #fff;
-background: #004777;
-padding-top: 3px;
-}
-
-#navcontainer ul li a:hover
-{
-color: #fff;
-background: #171D1C;
-padding: 1em;
-padding-top: 3px;
-=======
 #navcontainer ul li a:hover {
-  color: #fff;
-  background-color: #369;
-  padding: 1em;
-  padding-top: 3px;
+background: #171D1C;
 }
 .logo {
   display: block;
@@ -190,7 +159,6 @@ h2 {
   
 p {
   line-height: 1.25em;
->>>>>>> 8e8b030faba47718697dcb665404d22272604749
 }
 
 div#prod-page-title {
