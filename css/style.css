@@ -169,3 +169,45 @@ div.prod-img-container img {
 width: 180px;
 height: auto;
 }
+
+div#full-prod-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+/* taken from https://css-tricks.com/centering-css-complete-guide/ */
+div#full-prod-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  max-height: 35em;
+  max-width: 35em;
+  transform: translate(-50%, -50%);
+}
+
+#full-prod-img svg {
+  position: absolute;
+  top: 1em;
+  right: 2em;
+  font-size:3em;
+  color: white;
+}
+
+.fade-in {
+ animation-name: fadein;
+ animation-duration: .5s;
+ animation-timing-function: ease;
+}
+@-webkit-keyframes fadein {
+ 0% {opacity: 0;}
+ 
+ 100% {opacity: 1;}
+}
