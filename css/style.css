@@ -2,6 +2,33 @@ body {
     background-color: #a9bcd0;
 }
 
+.deck {
+    border: 1px solid #000;
+    box-shadow: 1px 1px 1px 1px #444;
+    margin:1em;
+}
+
+.card {
+    border:1px solid #ccc;
+    display:table-cell;
+    border-spacing:.5em;
+    padding:0;
+    position:relative;
+}
+
+.card header {
+    background:#eee;
+    font-size:1.75em;
+    font-weight:bold;
+    padding:.25em;
+}
+
+.card figure {
+    border:1px solid #ccc;
+    display:block;
+    margin:1em auto;
+}
+
 header {
 background-color: #415a77;
 }
@@ -11,12 +38,18 @@ logo {
     padding: 0;
 }
 
+#center {
+    text-align: center;
+}
+
+
 #navcontainer ul
 {
 margin: 0;
 padding: 0;
 list-style-type: none;
 text-align: center;
+padding-top: 4px;
 
 
 }
@@ -24,6 +57,7 @@ text-align: center;
 #navcontainer ul li { 
     display: inline; 
     padding: 1em;
+    padding-top: 3px;
 }
 
 
@@ -34,6 +68,7 @@ text-decoration: none;
 padding: 1em;
 color: #fff;
 background-color: lightseagreen;
+padding-top: 3px;
 }
 
 #navcontainer ul li a:hover
@@ -41,6 +76,7 @@ background-color: lightseagreen;
 color: #fff;
 background-color: #369;
 padding: 1em;
+padding-top: 3px;
 }
 
 h1
