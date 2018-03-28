@@ -18,10 +18,12 @@ padding: 0;
 list-style-type: none;
 text-align: center;
 
+
 }
 
 #navcontainer ul li { 
     display: inline; 
+    padding: 1em;
 }
 
 
@@ -29,7 +31,7 @@ text-align: center;
 #navcontainer ul li a
 {
 text-decoration: none;
-padding: .2em 1em;
+padding: 1em;
 color: #fff;
 background-color: lightseagreen;
 }
@@ -38,6 +40,7 @@ background-color: lightseagreen;
 {
 color: #fff;
 background-color: #369;
+padding: 1em;
 }
 
 h1

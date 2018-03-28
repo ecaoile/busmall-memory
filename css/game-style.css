@@ -17,7 +17,7 @@ td {
   position: relative;
   width: 150px;
 }
-.card {
+.card, .card-matched {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
@@ -27,16 +27,63 @@ td {
 /* .card:hover {
   transform: rotateY(180deg);
 } */
-.card .side {
+.card .side, .card-matched .side {
   backface-visibility: hidden;
   height: 100%;
   position: absolute;
   width: 100%;
 }
-.card .back {
+.card .back, .card-matched .back {
   transform: rotateY(180deg);
 }
 .card-flip {
   transform: rotateY(180deg);
 }
-
+#game-container {
+  position:relative;
+}
+#end-of-game {
+  background: rgba(0,0,0,0.8);
+  display:none;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+}
+#end-of-game header {
+    color: white;
+    background: none;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 200px;
+}
+#end-of-game button {
+  text-align: center;
+    font-size: 2em;
+    margin: 1em;
+    padding: 1em;
+    background: #0B4F6C;
+    border: none;
+    border-radius: 15px;
+}
+#end-of-game button a {
+  color: white;
+  text-decoration: none;
+}
+.life-lost {
+  background: red;
+  transition: all .1s ease-in-out;
+}
+#end-of-game ul {
+  color: #171D1C;
+  font-size: 3em;
+  list-style-type: none;
+  width: 40%;
+  margin: 1em auto;
+  background: #E8F1F2;
+}
