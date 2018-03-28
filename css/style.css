@@ -120,6 +120,17 @@ text-decoration-color: #415a77;
 text-shadow: 0 2px whitesmoke;
 }
   
+
+div#sign-in-div {
+  text-align: center;
+}
+
+div#sign-in-div select {
+  display: block;
+  margin: auto;
+}
+
+
 div#player input#player-name {
 display: block;
 font-size: 24px;
@@ -141,6 +152,10 @@ display: inline-block;
     margin-right: 2em;
     padding: .5em 5em;
     text-decoration-color: whitesmoke;
+}
+
+#results {
+  display: none;
 }
 
 div#footer {
@@ -178,5 +193,17 @@ div#results-display-text {
   text-align: center;
   }
 
+  div #results-display-text h1 {
+  font-family: 'Cabin Condensed', sans-serif;
+  text-align: center;
+  text-decoration-color: #415a77;
+  text-shadow: 0 2px whitesmoke;
+  }
+
+  div #results-graphs {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+  }
 
 
