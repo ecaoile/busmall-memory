@@ -42,6 +42,8 @@ div.ex1 {
   }
 
 
+  
+
   div.ex4 {
     background-color: lightblue;
     width: 500px;
@@ -94,7 +96,7 @@ text-align: center;
 }
 
 logo {
-    margin-right 50%;
+    margin-right: 50%;
     padding: 0;
 }
 
@@ -109,6 +111,7 @@ logo {
   padding: 0;
 }
 
+<<<<<<< HEAD
 
 #navcontainer ul
 {
@@ -119,6 +122,14 @@ text-align: right;
 padding-top: 4px;
 
 
+=======
+#navcontainer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  padding-top: 4px;
+>>>>>>> 8e8b030faba47718697dcb665404d22272604749
 }
 
 #navcontainer ul li { 
@@ -127,7 +138,15 @@ padding-top: 4px;
     padding: 0;
 }
 
+#navcontainer ul li a {
+  text-decoration: none;
+  padding: 1em;
+  color: #fff;
+  background-color: lightseagreen;
+  padding-top: 3px;
+}
 
+<<<<<<< HEAD
 
 #navcontainer ul li a
 {
@@ -144,20 +163,51 @@ color: #fff;
 background: #171D1C;
 padding: 1em;
 padding-top: 3px;
+=======
+#navcontainer ul li a:hover {
+  color: #fff;
+  background-color: #369;
+  padding: 1em;
+  padding-top: 3px;
+}
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  width: 250px;
+}
+h1 {
+  font-size: 32px;
+  line-height: 2em;
 }
 
-h1
-{
-    
-    text-align: center;
-    font-family: 'Fascinate Inline', cursive;
+h2 {
+  font-size: 24px;
+  line-height: 1.5em;
+}
+  
+p {
+  line-height: 1.25em;
+>>>>>>> 8e8b030faba47718697dcb665404d22272604749
 }
 
-.logo
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
-    width: 250px;
+div#prod-page-title {
+  text-align: center;
+}
+
+div.product-container {
+  background-color: #0B4F6C;
+  box-shadow: 5px 5px #415A77;
+  color: #E8F1F2;
+  display: inline-block;
+  margin: 1.5em 8em;
+  padding: 1em;
+}
+div.prod-img-container {
+  float: left;
+  margin: .5em 1em .5em .5em;
+  border: .25em solid #A9BCD0;
+  padding: .25em;
+  background-color: #415A77;
 }
