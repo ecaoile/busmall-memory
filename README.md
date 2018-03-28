@@ -74,3 +74,35 @@ Research on how to handle mouse click speed because game breaks when mouse is cl
 Sam Porter Giffords [9:28 AM]
 https://stackoverflow.com/questions/4818507/getting-systems-double-click-timer-interval-in-wpf-value-from-control-panel
 
+Font selection/s:
+Justin Morris [10:59 AM]
+https://fonts.google.com/?selection.family=Cabin&query=cabin
+
+Research how to horizontally and vertically align an element inside a div:
+
+https://css-tricks.com/centering-css-complete-guide/
+CSS-Tricks
+
+
+Research on how to create a fade-in transition for our products page
+
+Justin Morris [1:23 PM]
+
+https://www.w3schools.com/css/css3_animations.asp
+w3schools.com
+
+Then, Justin wrote this himself:
+
+.fly-in {
+ animation-name: fadein;
+ animation-duration: 1s;
+ animation-timing-function: ease;
+}
+@-webkit-keyframes fadein {
+ 0% {opacity: 0;}
+ 
+ 100% {opacity: 1;}
+}
+
+
+
