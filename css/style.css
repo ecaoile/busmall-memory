@@ -1,182 +1,188 @@
 body {
-    background-color: #a9bcd0;
-}
-
-.deck {
-    border: 1px solid #000;
-    box-shadow: 1px 1px 1px 1px #444;
-    margin:1em;
-}
-
-
-div.ex1 {
-    background-color: lightblue;
-    width: 500px;
-    margin-top: 50px;
-    overflow-x: scroll;
-    text: center;
-
-
+      background-color: #a9bcd0;
   }
-
-  div.ex2 {
-    background-color: lightblue;
-    width: 500px;
-    height: 500px:
-    overflow-x: scroll;
-    text: center;
-    float: right;
-    margin-top: -450px;
-    margin-left: -50px;
-
+  
+  .deck {
+      border: 1px solid #000;
+      box-shadow: 1px 1px 1px 1px #444;
+      margin:1em;
   }
   
   
-  div.ex3 {
-    background-color: lightblue;
-    width: 500px;
-    overflow-x: scroll;
-    text: center;
-    float: left;
-    margin-top: 20px;
-
-  }
-
-
+  div.ex1 {
+      background-color: lightblue;
+      width: 500px;
+      margin-top: 50px;
+      overflow-x: scroll;
+      text: center;
   
-
-  div.ex4 {
+  
+    }
+  
+    div.ex2 {
+      background-color: lightblue;
+      width: 500px;
+      height: 500px:
+      overflow-x: scroll;
+      text: center;
+      float: right;
+      margin-top: -450px;
+      margin-left: -50px;
+  
+    }
+    
+    
+    div.ex3 {
+      background-color: lightblue;
+      width: 500px;
+      overflow-x: scroll;
+      text: center;
+      float: left;
+      margin-top: 20px;
+  
+    }
+  
+  
+    div.ex4 {
     background-color: lightblue;
-    width: 500px;
-    overflow-x: scroll;
-    text: center;
-    float: right;
-    margin-top: 20px
+      width: 500px;
+      overflow-x: scroll;
+      text: center;
+      float: right;
+      margin-top: 20px
+  
+    }
 
+   header {
+      background-color: #415a77;
+    
+    }
+  
+  
+    header img {
+      width: 500px;
+      margin: 0 auto;
+      display: block;
+    }
+    
+  
+  .card {
+      border:1px solid #ccc;
+      display:table-cell;
+      border-spacing:.5em;
+      padding:0;
+      position:relative;
   }
-
-
-  header img {
-    width: 500px;
-    margin: 0 auto;
+  
+  .card header {
+      background:#eee;
+      font-size:1.75em;
+      font-weight:bold;
+      padding:.25em;
+  }
+  
+  .card figure {
+      border:1px solid #ccc;
+      display:block;
+      margin:1em auto;
+  }
+  
+  
+  header nav {
+    position: fixed;
+    padding: 0;
+    right: 0;
+    top: 0;
+    background: #004777;
     display: block;
   }
   
-
-.card {
-    border:1px solid #ccc;
-    display:table-cell;
-    border-spacing:.5em;
-    padding:0;
-    position:relative;
-}
-
-.card header {
-    background:#eee;
-    font-size:1.75em;
-    font-weight:bold;
-    padding:.25em;
-}
-
-.card figure {
-    border:1px solid #ccc;
-    display:block;
-    margin:1em auto;
-}
-
-
-header {
-background-color: #415a77;
-text-align: center;
-
-
-}
-
-.clearfix {
-    overflow: auto;
-}
-
-logo {
-    margin-right: 50%;
-    padding: 0;
-}
-
-#center {
-    text-align: center;
-    color: #415a77;
-
-}
-
-#container{
-  position: fixed;
-  right: 0;
-  top: 0;
-  background: #004777;
-}
-
-#navcontainer ul {
-  margin: 0;
-  padding: 0;
-
-}
-
-#navcontainer ul li { 
-    display: inline-block; 
-    list-style-type: none;
-    padding: 1em;
-    transition: all .3s ease;
-}
-
-#navcontainer ul li a {
-  text-decoration: none;
-  font-family: 'Cabin', sans-serif;
-  text-transform: uppercase;
-  padding: 1em;
-  color: #fff;
-  font-size: 1em;
-  font-weight: 700;
-}
-
-#navcontainer ul li a:hover {
-background: #171D1C;
-}
-.logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 250px;
-  width: 250px;
-}
-h1 {
-  font-size: 32px;
-  line-height: 2em;
-}
-
-h2 {
-  font-size: 24px;
-  line-height: 1.5em;
-}
+  logo {
+      margin-right: 50%;
+      padding: 0;
+  }
   
-p {
-  line-height: 1.25em;
-}
+  #center {
+      text-align: center;
+      color: #415a77;
+      display: block;
+  
+  }
+  
+  #navcontainer{
+    right: 8px;
+    top: -40;
+    background: #004777;
+    
 
+  }
+  
+  #navcontainer ul {
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  #navcontainer ul li { 
+      display: inline-block; 
+      list-style-type: none;
+      padding: 1em;
+      transition: all .3s ease;
+      margin: 0;
+  }
+  
+  #navcontainer ul li a {
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
+    padding: 1em;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  #navcontainer ul li a:hover {
+  background: #171D1C;
+  }
+
+  .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 2em;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+   
+  p {
+    line-height: 1.25em;
+  }
+  
 div#prod-page-title {
-  text-align: center;
-}
-
-div.product-container {
-  background-color: #0B4F6C;
-  box-shadow: 5px 5px #415A77;
-  color: #E8F1F2;
-  display: inline-block;
-  margin: 1.5em 8em;
-  padding: 1em;
-}
-div.prod-img-container {
-  float: left;
-  margin: .5em 1em .5em .5em;
-  border: .25em solid #A9BCD0;
+    text-align: center;
+  }
+  
+  div.product-container {
+    background-color: #0B4F6C;
+   box-shadow: 5px 5px #415A77;
+    color: #E8F1F2;
+    display: inline-block;
+    margin: 1.5em 8em;
+    padding: 1em;
+  }
+  div.prod-img-container {
+    float: left;
+    margin: .5em 1em .5em .5em;
+    border: .25em solid #A9BCD0;
   padding: .25em;
   background-color: #415A77;
-}
+  }
