@@ -15,13 +15,17 @@ var usableDifficulty = JSON.parse(storedDifficulty);
 if (usableDifficulty && usableDifficulty.length) {
   if (usableDifficulty === 'easy') {
     var tableLevel = 2;
+    var lives = 3;
   } else if (usableDifficulty === 'medium') {
     tableLevel = 4;
+    lives = 5;
   } else if (usableDifficulty === 'hard') {
     tableLevel = 6;
+    lives = 7;
   }
 } else {
   tableLevel = 6;
+  lives = 5;
 }
 
 var storedWins = localStorage.getItem('busmall.wins');
@@ -47,8 +51,16 @@ if (usableTimes && usableTimes.length) {
   winTimes = [];
 }
 
-var lives = 3;
-var livesContainer = document.getElementById('lives');
+var heartContainer = document.getElementById('hearts');
+//function to display heart icons
+function displayLives() {
+  heartContainer.innerHTML = '';
+  for (var i = 0; i < lives; i++) {
+    var heartEl = document.createElement('i');
+    heartEl.className = 'fas fa-heart';
+    heartContainer.appendChild(heartEl);
+  }
+}
 
 var beginWaitTime = 2000; // time before cards flip
 var flipWaitTime = 1500;
@@ -142,8 +154,6 @@ function createRandImgIndex() {
 
 function renderGame() {
 
-  livesContainer.textContent = lives;
-
   // for loop to fill whole table
   numUniqueImages = Math.floor(tableCellsArray.length / 2);
 
@@ -154,6 +164,7 @@ function renderGame() {
     while (imgsDisplayed.includes(Product.allProducts[randImgIndex].imgName)) {
       createRandImgIndex();
     }
+
     for (var j = 0; j < 2; j++) {
       // if it has nothing in it the 'console.log();'
       while (tableCellsArray[randTdIndex].innerHTML) {
@@ -163,7 +174,7 @@ function renderGame() {
       var randTdElement = tableCellsArray[randTdIndex];
       // randTdElement.innerHTML
       var divElement1 = document.createElement('div');
-      divElement1.className = 'card-container';
+      divElement1.className = 'card-container fade-in';
 
       var divElement2 = document.createElement('div');
       divElement2.className = 'card';
@@ -200,6 +211,7 @@ function renderGame() {
 
       randTdElement.appendChild(divElement1);
     }
+
     imgsDisplayed.push(Product.allProducts[randImgIndex].imgName);
   }
 }
@@ -219,10 +231,13 @@ setTimeout( flipCardsOnLoad, beginWaitTime);
 // on click flip card back to show image
 
 var classForClick = document.getElementsByClassName('card');
-
-for ( var k in classForClick){
-  classForClick[k].addEventListener('click', handleClick1);
+function addListeners() {
+  for ( var k = 0; k < classForClick.length; k++) {
+    classForClick[k].addEventListener('click', handleClick1);
+  }
 }
+
+setTimeout( addListeners, beginWaitTime + 500);
 
 function handleClick1(event) {
 
@@ -301,13 +316,13 @@ function handleClick1(event) {
       clickedCard1.addEventListener('click', handleClick1);
       lives--;
       setTimeout(() => {
-        livesContainer.classList.toggle('life-lost');
-        livesContainer.textContent = lives;
-        // livesContainer.classList.toggle('life-lost');
+        heartContainer.classList.toggle('life-lost');
+        displayLives();
       }, 1000);
 
       if (lives === 0) {
         losses++;
+        clearInterval(runningTime);
         setTimeout(() => {
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
@@ -338,6 +353,7 @@ function saveToLocalStorage() {
   console.log(jsonTimes);
   localStorage.setItem('busmall.winTimes', jsonTimes);
 }
+displayLives();
 
 
 
