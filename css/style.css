@@ -8,6 +8,58 @@ body {
     margin:1em;
 }
 
+
+div.ex1 {
+    background-color: lightblue;
+    width: 500px;
+    margin-top: 50px;
+    overflow-x: scroll;
+    text: center;
+
+
+  }
+
+  div.ex2 {
+    background-color: lightblue;
+    width: 500px;
+    height: 500px:
+    overflow-x: scroll;
+    text: center;
+    float: right;
+    margin-top: -450px;
+    margin-left: -50px;
+
+  }
+  
+  div.ex3 {
+    background-color: lightblue;
+    width: 500px;
+    overflow-x: scroll;
+    text: center;
+    float: left;
+    margin-top: 20px;
+
+  }
+
+
+  div.ex4 {
+    background-color: lightblue;
+    width: 500px;
+    overflow-x: scroll;
+    text: center;
+    float: right;
+    margin-top: 20px
+
+  }
+
+
+  header img {
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+
 .card {
     border:1px solid #ccc;
     display:table-cell;
@@ -32,6 +84,13 @@ body {
 
 header {
 background-color: #415a77;
+text-align: center;
+
+
+}
+
+.clearfix {
+    overflow: auto;
 }
 
 logo {
@@ -45,13 +104,18 @@ logo {
 
 }
 
+#container{
+    margin: 0;
+  padding: 0;
+}
+
 
 #navcontainer ul
 {
 margin: 0;
 padding: 0;
 list-style-type: none;
-text-align: center;
+text-align: right;
 padding-top: 4px;
 
 
@@ -59,8 +123,8 @@ padding-top: 4px;
 
 #navcontainer ul li { 
     display: inline; 
-    padding: 1em;
-    padding-top: 3px;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -70,14 +134,14 @@ padding-top: 4px;
 text-decoration: none;
 padding: 1em;
 color: #fff;
-background-color: lightseagreen;
+background: #004777;
 padding-top: 3px;
 }
 
 #navcontainer ul li a:hover
 {
 color: #fff;
-background-color: #369;
+background: #171D1C;
 padding: 1em;
 padding-top: 3px;
 }
