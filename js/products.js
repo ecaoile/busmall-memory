@@ -104,30 +104,31 @@ function closeClick(event) {
   }
 }
 
-renderProductPage();
+function displayBottomButton() {
+  // append a button letting user return to the top
+  var returnToTopElement = document.getElementById('bottom-button');
+  var buttonElement = document.createElement('button');
+  buttonElement.setAttribute('class', 'big-button');
+  buttonElement.setAttribute('id', 'bottom-button');
+  buttonElement.setAttribute('onClick', 'window.scrollTo(0,0)');
+  // note: \u2191 means up arrow in JavaScript
+  buttonElement.textContent = '\u2191 return to top \u2191';
+  returnToTopElement.appendChild(buttonElement);
+}
 
-function myFunction() {
+renderProductPage();
+displayBottomButton();
+function productSearch() {
   var input, filter, ul, li, i;
   input = document.getElementById('myInput');
   filter = input.value.toUpperCase();
   ul = document.getElementById('product-list');
   li = ul.getElementsByTagName('li');
-  //var h2 = document.getElementsByTagName('h2');
-  //console.log(h2);
   for (i = 0; i < li.length; i++) {
     var productContainer = li[i].getElementsByTagName('div')[0];
-    //console.log(productContainer);
     var textContainer = productContainer.getElementsByTagName('div')[1];
-    //console.log(textContainer);
-    //console.log(textContainer.textContent);
     var h2 = textContainer.getElementsByTagName('h2');
-    //console.log(h2[0].innerHTML);
     var h2TextContent = h2[0].innerHTML;
-    //console.log(h2.innerHTML);
-    //console.log(h2.textContent);
-    //li = ul[i].getElementsByTagName('li');
-    //console.log(li[i]);
-    //console.log(li.length);
     if (h2TextContent.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = '';
     } else {
