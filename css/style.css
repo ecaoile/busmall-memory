@@ -169,6 +169,9 @@ div.prod-img-container img {
 width: 180px;
 height: auto;
 }
+div.prod-img-container img:hover {
+  cursor: pointer;
+}
 
 div#full-prod-img {
   position: fixed;
@@ -210,4 +213,16 @@ div#full-prod-img img {
  0% {opacity: 0;}
  
  100% {opacity: 1;}
+}
+
+#myInput {
+  background-image: url('../img/search-icon.png');
+  background-position: 8px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin: 2em 0 2em 8em;
 }
