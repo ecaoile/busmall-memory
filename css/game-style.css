@@ -63,7 +63,8 @@ nav#game-status-bar ul li {
 }
 nav#game-status-bar #timer {
   font-size: 2em;
-  margin-left: .5em;
+  display: block;
+  margin: .25em auto;
   position: relative;
   top: -6px;
   vertical-align: middle;
