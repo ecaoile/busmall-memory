@@ -116,6 +116,7 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
+<<<<<<< HEAD
 var input = document.getElementById('myInput');
 //var resetButton = document.getElementById('dat-reset');
 //console.log(resetButton);
@@ -132,6 +133,13 @@ resetButton.dispatchEvent(evt);*/
 function productSearch() {
   //console.log('test');
   var filter, ul, li, i;
+=======
+renderProductPage();
+displayBottomButton();
+function productSearch() {
+  var input, filter, ul, li, i;
+  input = document.getElementById('myInput');
+>>>>>>> d7dad9f720f6698f8c7a358284edd189ff557f93
   filter = input.value.toUpperCase();
   ul = document.getElementById('product-list');
   li = ul.getElementsByTagName('li');
