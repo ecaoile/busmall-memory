@@ -116,9 +116,13 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
+var input = document.getElementById('myInput');
+if (input.textContent === '') {
+  productSearch();
+}
+
 function productSearch() {
-  var input, filter, ul, li, i;
-  input = document.getElementById('myInput');
+  var filter, ul, li, i;
   filter = input.value.toUpperCase();
   ul = document.getElementById('product-list');
   li = ul.getElementsByTagName('li');
@@ -135,6 +139,20 @@ function productSearch() {
     }
   }
 }
+/*
+var clickEvent = document.createEvent('MouseEvents');
+clickEvent.initEvent('dblclick', true, true);
+input.dispatchEvent(clickEvent);
 
+function findX(event) {
+
+  console.log(event.target.value);
+  input.style.webkitAppearance = '';
+  input.textContent = '';
+
+}
+
+input.addEventListener('click', findX);
+*/
 renderProductPage();
 displayBottomButton();
