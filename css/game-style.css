@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+h1, h2, h3, p, a, li {
+  font-family: 'Cabin', sans-serif;
+}
+header {
+  padding: 26px 0;
+}
+header img {
+  width: 500px;
+  margin: 0 auto;
+  display: block;
+}
+header nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #004777;
+  z-index: 1;
+}
+header nav ul {
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 1.1em;
+  transition: all .3s ease;
+}
+header nav ul li:hover {
+  background: #171D1C;
+}
+header nav ul li a {
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+section#game-container {
+  padding-top: 30px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.8);
+}
+nav#game-status-bar {
+  background: #0B4F6C;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow: 1px 1px 22px -5px rgba(0,0,0,0.8);
+  color: white;
+  float:left;
+  position: relative;
+  padding: 2em;
+  text-align: center;
+  width: 15vw;
+}
+nav#game-status-bar ul li {
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: .5em;
+  text-transform: uppercase;
+}
+nav#game-status-bar #timer {
+  font-size: 2em;
+  display: block;
+  margin: .25em auto;
+  position: relative;
+  top: -6px;
+  vertical-align: middle;
+}
+#memory-game td img {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 2px 2px 17px -4px #171D1C;
+}
+
+#memory-game {
+  margin: 0 auto;
+}
+td {
+  padding: .5em;
+}
+.card-container {
+  position: relative;
+  transform: all .3s ease-in-out;
+}
+.two-by-two {
+  height: 191px;
+  width: 150px;
+}
+.four-by-four {
+  height: 159px;
+  width: 125px;
+}
+.six-by-six {
+  height: 100px;
+  width: 79px;
+}
+
+.card, .card-matched {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 100%;
+  border: none;
+}
+.card-container:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+.card .side, .card-matched .side {
+  backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.card .back, .card-matched .back {
+  transform: rotateY(180deg);
+}
+.card-flip {
+  transform: rotateY(180deg);
+}
+.card .side a, .card-matched .side a {
+  backface-visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  color: #E8F1F2;
+  margin-right: .5em;
+  margin-bottom: .25em;
+  font-size: 1.5em;
+}
+#game-container {
+  position:relative;
+}
+#end-of-game {
+  background: #0B4F6C;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow: 1px 1px 22px -5px rgba(0,0,0,0.8);
+  color: white;
+  clear:left;
+  float: left;
+  margin-top: 2em;
+  width: 15vw;
+}
+#end-of-game h2 {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 1.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+#end-of-game button {
+  text-align: center;
+    font-size: 2em;
+    margin: 1em;
+    padding: 1em;
+    background: #0B4F6C;
+    border: none;
+    border-radius: 15px;
+}
+#end-of-game button a {
+  color: white;
+  text-decoration: none;
+}
+
+#end-of-game ul {
+  list-style-type: none;
+  margin: 1em auto;
+}
+.life-lost {
+  animation-name: example;
+  animation-duration: .5s;
+}
+@-webkit-keyframes example {
+  0% {color: rgba(0,0,0,1)}
+  50%  {color: rgba(255,0,0,1)}
+  100% {color: rgba(255,255,255,1)}
+}
+.fade-in {
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+@-webkit-keyframes fadein {
+  0% {opacity: 0;}
+  
+  100% {opacity: 1;}
+}
+.fly-in-from-right {
+  animation-name: flyin-right;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+}
+@-webkit-keyframes flyin-right {
+  0% {left: -500px;}
+  90% {left: -400px;}
+  100% {left: 0;}
+}
