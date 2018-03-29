@@ -1,7 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #a9bcd0;
-  margin: 0;
-}
+}  
 
 .deck {
   border: 1px solid #000;
@@ -34,18 +37,41 @@ body {
   padding:.5em;
   text-align:center;
 }
-
-header {
-background-color: #415a77;
+section.about-me {
+  text-align: center;
 }
 
 logo {
   margin-right: 50%;
   padding: 0;
 }
+div.ex {
+  background-color:  lightblue;
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+  vertical-align: middle;
+}
+div.ex img {
+  width: 300px;
+  height: 300px;
+}
 
-#center {
-  text-align: center;
+header {
+  background-color: #171D1C;
+}
+header img {
+  width: 500px;
+  margin: 0 auto;
+  display: block;
+}
+
+header nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #004777;
+  z-index: 1;
 }
 
 #navcontainer ul {
@@ -76,6 +102,7 @@ background-color: #369;
 padding: 1em;
 padding-top: 3px;
 }
+
 .logo {
 display: block;
 margin-left: auto;
@@ -141,11 +168,80 @@ font-size: 24px;
 line-height: 1.5em;
 }
 
+img#IndexLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.5em;
+  width: 600px;
+ }
+
+#player h1 {
+  font-family: 'Cabin Condensed', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+text-align: center;
+text-decoration-color: #415a77;
+text-shadow: 0 2px whitesmoke;
+}
+div#sign-in-div {
+  text-align: center;
+}
+
+div#sign-in-div select {
+  display: block;
+  margin: auto;
+}
+
+
+div#player input#player-name {
+display: block;
+font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;  
+}
+
+div#buttons {
+  display: block;
+  margin-top: 4.5em;
+  text-align: center
+}
+
+button#submit-play, #results {
+background-color: #415a77;
+display: inline-block;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: .5em 5em;
+    text-decoration-color: whitesmoke;
+}
+
+#results {
+  display: none;
+}
+
+div#footer {
+  font-size: 10px;
+  margin-top: 5em;
+  text-align: center;
+} 
+
 p {
 line-height: 1.25em;
 }
 
+  h1 {
+    font-size: 32px;
+    line-height: 2em;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+  
 div#prod-page-title {
+<<<<<<< HEAD
 text-align: center;
 }
 
@@ -225,4 +321,22 @@ div#full-prod-img img {
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin: 2em 0 2em 8em;
+}
+
+div#results-display-text {
+  margin-top: 5em;
+  text-align: center;
+  }
+
+  div #results-display-text h1 {
+  font-family: 'Cabin Condensed', sans-serif;
+  text-align: center;
+  text-decoration-color: #415a77;
+  text-shadow: 0 2px whitesmoke;
+  }
+
+  div #results-graphs {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
 }
