@@ -15,13 +15,21 @@ var usableDifficulty = JSON.parse(storedDifficulty);
 if (usableDifficulty && usableDifficulty.length) {
   if (usableDifficulty === 'easy') {
     var tableLevel = 2;
+    var lives = 3;
+    var cardSizeClass = 'two-by-two';
   } else if (usableDifficulty === 'medium') {
     tableLevel = 4;
+    lives = 5;
+    cardSizeClass = 'four-by-four';
   } else if (usableDifficulty === 'hard') {
     tableLevel = 6;
+    lives = 7;
+    cardSizeClass = 'six-by-six';
   }
 } else {
   tableLevel = 6;
+  lives = 5;
+  cardSizeClass = 'four-by-four';
 }
 
 var storedWins = localStorage.getItem('busmall.wins');
@@ -47,8 +55,16 @@ if (usableTimes && usableTimes.length) {
   winTimes = [];
 }
 
-var lives = 3;
-var livesContainer = document.getElementById('lives');
+var heartContainer = document.getElementById('hearts');
+//function to display heart icons
+function displayLives() {
+  heartContainer.innerHTML = '';
+  for (var i = 0; i < lives; i++) {
+    var heartEl = document.createElement('i');
+    heartEl.className = 'fas fa-heart';
+    heartContainer.appendChild(heartEl);
+  }
+}
 
 var beginWaitTime = 2000; // time before cards flip
 var flipWaitTime = 1500;
@@ -72,7 +88,6 @@ var memoryTable = document.getElementById('memory-game');
 var imgClick1;
 var clickedCard1;
 var flipped = false;
-
 
 // Create Table
 for (var i = 0; i < tableLevel; i++) {
@@ -139,10 +154,7 @@ function createRandImgIndex() {
   return randImgIndex;
 }
 
-
 function renderGame() {
-
-  livesContainer.textContent = lives;
 
   // for loop to fill whole table
   numUniqueImages = Math.floor(tableCellsArray.length / 2);
@@ -154,6 +166,7 @@ function renderGame() {
     while (imgsDisplayed.includes(Product.allProducts[randImgIndex].imgName)) {
       createRandImgIndex();
     }
+
     for (var j = 0; j < 2; j++) {
       // if it has nothing in it the 'console.log();'
       while (tableCellsArray[randTdIndex].innerHTML) {
@@ -163,7 +176,7 @@ function renderGame() {
       var randTdElement = tableCellsArray[randTdIndex];
       // randTdElement.innerHTML
       var divElement1 = document.createElement('div');
-      divElement1.className = 'card-container';
+      divElement1.className = 'card-container ' + cardSizeClass + ' fade-in';
 
       var divElement2 = document.createElement('div');
       divElement2.className = 'card';
@@ -200,31 +213,40 @@ function renderGame() {
 
       randTdElement.appendChild(divElement1);
     }
+
     imgsDisplayed.push(Product.allProducts[randImgIndex].imgName);
   }
 }
 renderGame();
 
-// flip the cards so the placeholder shows
 function flipCardsOnLoad() {
   var tdlist = memoryTable.getElementsByTagName('td');
   for (var i = 0; i < tdlist.length; i++) {
     var cardClass = tdlist[i].getElementsByClassName('card')[0];
     cardClass.classList.toggle('card-flip');
-    // sideclass.className = 'side back';
   }
 }
 
 setTimeout( flipCardsOnLoad, beginWaitTime);
-// on click flip card back to show image
 
 var classForClick = document.getElementsByClassName('card');
-
-for ( var k in classForClick){
-  classForClick[k].addEventListener('click', handleClick1);
+function addListeners() {
+  for ( var k = 0; k < classForClick.length; k++) {
+    classForClick[k].addEventListener('click', handleClick);
+  }
 }
 
-function handleClick1(event) {
+setTimeout( addListeners, beginWaitTime + 500);
+
+function flipCardsOnLoss() {
+  var cardClass = memoryTable.getElementsByClassName('card');
+  for (var k = 0; k < classForClick.length; k++) {
+    cardClass[k].classList.toggle('card-flip');
+    cardClass[k].removeEventListener('click', handleClick);
+  }
+}
+
+function handleClick(event) {
 
   if(!flipped) {
 
@@ -234,7 +256,7 @@ function handleClick1(event) {
     clickedCard1 = event.path[2];
     clickedCard1.classList.toggle('card-flip');
 
-    clickedCard1.removeEventListener('click', handleClick1);
+    clickedCard1.removeEventListener('click', handleClick);
     flipped = true;
 
     return imgClick1, clickedCard1;
@@ -254,8 +276,8 @@ function handleClick1(event) {
       clickedCard1.className= 'card-matched';
       clickedCard2.className = 'card-matched';
 
-      clickedCard1.removeEventListener('click', handleClick1);
-      clickedCard2.removeEventListener('click', handleClick1);
+      clickedCard1.removeEventListener('click', handleClick);
+      clickedCard2.removeEventListener('click', handleClick);
 
       cardsMatched++;
 
@@ -298,30 +320,40 @@ function handleClick1(event) {
         clickedCard2.classList.toggle('card-flip');
       }, flipWaitTime);
 
-      clickedCard1.addEventListener('click', handleClick1);
+      clickedCard1.addEventListener('click', handleClick);
       lives--;
       setTimeout(() => {
-        livesContainer.classList.toggle('life-lost');
-        livesContainer.textContent = lives;
-        // livesContainer.classList.toggle('life-lost');
+
+        heartContainer.classList.toggle('life-lost');
+
+        displayLives();
+
+        setTimeout(() => {
+          heartContainer.classList.toggle('life-lost');
+        }, 1000);
+
       }, 1000);
 
       if (lives === 0) {
         losses++;
+
+        clearInterval(runningTime);
+
         setTimeout(() => {
+
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
 
+          flipCardsOnLoss();
+
           var endOfGameMessage = document.getElementById('end-of-game-message');
-          endOfGameMessage.innerHTML = username + '<br/>You are awesome but you ran out of lives';
+          endOfGameMessage.innerHTML = 'Sorry, ' + username + '! <br/>You ran out of lives.';
 
         }, 2000);
 
         saveToLocalStorage();
 
       }
-
-      console.log(lives);
       flipped = false;
     }
   }
@@ -338,6 +370,7 @@ function saveToLocalStorage() {
   console.log(jsonTimes);
   localStorage.setItem('busmall.winTimes', jsonTimes);
 }
+displayLives();
 
 
 
