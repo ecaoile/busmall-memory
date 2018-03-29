@@ -116,30 +116,9 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
-<<<<<<< HEAD
-var input = document.getElementById('myInput');
-//var resetButton = document.getElementById('dat-reset');
-//console.log(resetButton);
-//var evt = new Event('dblclick');
-//resetButton.dispatchEvent(evt);
-//resetButton.dispatchEvent(new MouseEvent('dbclick', { 'bubbles': true }));
-/*var evt = new MouseEvent('dblclick', {
-  'view': window,
-  'bubbles': true,
-  'cancelable': true
-});
-resetButton.dispatchEvent(evt);*/
-
-function productSearch() {
-  //console.log('test');
-  var filter, ul, li, i;
-=======
-renderProductPage();
-displayBottomButton();
 function productSearch() {
   var input, filter, ul, li, i;
   input = document.getElementById('myInput');
->>>>>>> d7dad9f720f6698f8c7a358284edd189ff557f93
   filter = input.value.toUpperCase();
   ul = document.getElementById('product-list');
   li = ul.getElementsByTagName('li');
@@ -156,22 +135,6 @@ function productSearch() {
     }
   }
 }
-/*
-var clickEvent = document.createEvent('MouseEvents');
-clickEvent.initEvent('dblclick', true, true);
-input.dispatchEvent(clickEvent);
 
-function findX(event) {
-
-  console.log(event.target.value);
-  input.style.webkitAppearance = '';
-  input.textContent = '';
-
-}
-
-input.addEventListener('click', findX);
-*/
-
-//resetButton.addEventListener('click', )
 renderProductPage();
 displayBottomButton();

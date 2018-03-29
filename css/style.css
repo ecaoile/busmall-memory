@@ -405,8 +405,9 @@ div#full-prod-img img {
   top: 11.5px;
   left: -180px;
 }
-#omgwtf {
-  background-color: transparent;
+
+#dat-reset:focus {
+  outline: none;
 }
 span.deleteicon {
   position: relative;
@@ -461,8 +462,6 @@ div#results-display-text {
 }
 
 button#bottom-button {
-  display: inline-block;
-  padding: 15px 25px;
   font-size: 24px;
   cursor: pointer;
   margin: 1em;
