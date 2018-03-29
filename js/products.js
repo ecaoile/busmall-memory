@@ -104,8 +104,20 @@ function closeClick(event) {
   }
 }
 
-renderProductPage();
+function displayBottomButton() {
+  // append a button letting user return to the top
+  var returnToTopElement = document.getElementById('bottom-button');
+  var buttonElement = document.createElement('button');
+  buttonElement.setAttribute('class', 'big-button');
+  buttonElement.setAttribute('id', 'bottom-button');
+  buttonElement.setAttribute('onClick', 'window.scrollTo(0,0)');
+  // note: \u2191 means up arrow in JavaScript
+  buttonElement.textContent = '\u2191 return to top \u2191';
+  returnToTopElement.appendChild(buttonElement);
+}
 
+renderProductPage();
+displayBottomButton();
 function productSearch() {
   var input, filter, ul, li, i;
   input = document.getElementById('myInput');
