@@ -117,11 +117,20 @@ function displayBottomButton() {
 }
 
 var input = document.getElementById('myInput');
-if (input.textContent === '') {
-  productSearch();
-}
+//var resetButton = document.getElementById('dat-reset');
+//console.log(resetButton);
+//var evt = new Event('dblclick');
+//resetButton.dispatchEvent(evt);
+//resetButton.dispatchEvent(new MouseEvent('dbclick', { 'bubbles': true }));
+/*var evt = new MouseEvent('dblclick', {
+  'view': window,
+  'bubbles': true,
+  'cancelable': true
+});
+resetButton.dispatchEvent(evt);*/
 
 function productSearch() {
+  //console.log('test');
   var filter, ul, li, i;
   filter = input.value.toUpperCase();
   ul = document.getElementById('product-list');
@@ -154,5 +163,7 @@ function findX(event) {
 
 input.addEventListener('click', findX);
 */
+
+//resetButton.addEventListener('click', )
 renderProductPage();
 displayBottomButton();

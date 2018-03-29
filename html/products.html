@@ -38,8 +38,11 @@
       <i class="far fa-times-circle"></i>
     </div>
   </div>
-  <input type="search" id="myInput" onclick="productSearch()" onkeyup="productSearch()" placeholder="Search for products..."
-    title="Type in a product name." autocomplete="off">
+  <form id="omgwtf" action="" method="get">
+    <input type="text" id="myInput" onclick="productSearch()" onkeyup="productSearch()" placeholder="Search for products..."
+      title="Type in a product name." autocomplete="off">
+    <input type="reset" id="dat-reset" value="" alt="clear" onkeyup="productSearch()" onclick="productSearch()" />
+  </form>
   <ul id="product-list"></ul>
   <div id="bottom-button"></div>
   <script src="../js/products.js"></script>
