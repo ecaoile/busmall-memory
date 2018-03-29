@@ -33,9 +33,7 @@ function userInput(event) {
   localStorage.setItem('busmall.playername', usableUserName);
   localStorage.setItem('busmall.difficulty', usableDifficulty);
 
-  window.location = './html/game.html';
+  window.location = './html/game.html#memory-game';
 
 }
-
-
 
