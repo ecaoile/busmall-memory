@@ -116,8 +116,6 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
-renderProductPage();
-displayBottomButton();
 function productSearch() {
   var input, filter, ul, li, i;
   input = document.getElementById('myInput');
@@ -137,3 +135,6 @@ function productSearch() {
     }
   }
 }
+
+renderProductPage();
+displayBottomButton();
