@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>BusMall Products</title>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/style.css">
@@ -38,11 +40,8 @@
       <i class="far fa-times-circle"></i>
     </div>
   </div>
-  <form action="" method="get">
-    <input type="text" id="myInput" onclick="productSearch()" onkeyup="productSearch()" placeholder="Search for products..."
-      title="Type in a product name." autocomplete="off">
-    <input type="reset" id="dat-reset" value="" alt="clear" onkeyup="productSearch()" onclick="productSearch()" />
-  </form>
+  <input type="search" id="myInput" onclick="productSearch()" onkeyup="productSearch()" placeholder="Search for products..."
+    title="Type in a product name." autocomplete="off">
   <ul id="product-list"></ul>
   <div id="bottom-button"></div>
   <script src="../js/products.js"></script>

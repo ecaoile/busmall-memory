@@ -347,6 +347,7 @@ div#full-prod-img {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: none;
+  z-index:5;
 }
 /* taken from https://css-tricks.com/centering-css-complete-guide/ */
 div#full-prod-img img {
@@ -383,32 +384,31 @@ div#full-prod-img img {
   background-position: 8px;
   background-size: 30px;
   background-repeat: no-repeat;
-  width: 40%;
+  width: 50%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  padding: 12px 12px 12px 40px;
   border: 1px solid #ddd;
   margin: 2em 8em;
 }
-
+/*
 #dat-reset {
   background-image: url('../img/close-x.png');
-  background-position: 10px;
   background-size: 30px;  
   background-repeat: no-repeat;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border: none;
   background-color: transparent;
-  border: 0px solid;
   cursor: pointer;
   position: relative;
-  top: 11.5px;
-  left: -180px;
+  right:46.5em;
+  top:23em;
 }
 
 #dat-reset:focus {
   outline: none;
 }
+*/
 span.deleteicon {
   position: relative;
 }
