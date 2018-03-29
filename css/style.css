@@ -20,6 +20,16 @@ body {
   position:relative;
 }
 
+dive#about-title {
+    text-align: center;
+    }
+
+#about-name {
+  text-align: center;
+  color: #fff;
+}
+
+
 .card header {
   background:#eee;
   font-size:1.75em;
