@@ -4,59 +4,27 @@
 
 body {
       background-color: #a9bcd0;
-  }
-  
-  .deck {
+}  
+
+.deck {
       border: 1px solid #000;
       box-shadow: 1px 1px 1px 1px #444;
       margin:1em;
-  }
-  
-  
-  div.ex1 {
-      background-color: lightblue;
-      width: 500px;
-      margin-top: 50px;
-      overflow-x: scroll;
-      text: center;
-  
-  
-    }
-  
-    div.ex2 {
-      background-color: lightblue;
-      width: 500px;
-      height: 500px:
-      overflow-x: scroll;
-      text: center;
-      float: right;
-      margin-top: -450px;
-      margin-left: -50px;
-  
-    }
-    
-    
-    div.ex3 {
-      background-color: lightblue;
-      width: 500px;
-      overflow-x: scroll;
-      text: center;
-      float: left;
-      margin-top: 20px;
-  
-    }
-  
-  
-    div.ex4 {
-    background-color: lightblue;
-      width: 500px;
-      overflow-x: scroll;
-      text: center;
-      float: right;
-      margin-top: 20px
- 
 }
-
+section.about-me {
+  text-align: center;
+}
+div.ex {
+  background-color:  lightblue;
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+  vertical-align: middle;
+}
+div.ex img {
+  width: 300px;
+  height: 300px;
+}
    header {
       background-color: #171D1C;
     
