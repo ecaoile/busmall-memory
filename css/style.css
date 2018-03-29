@@ -114,13 +114,11 @@ h2 {
 
 #player h1 {
   font-family: 'Cabin Condensed', sans-serif;
-font-family: 'Source Sans Pro', sans-serif;
 text-align: center;
 text-decoration-color: #415a77;
 text-shadow: 0 2px whitesmoke;
 }
   
-
 div#sign-in-div {
   text-align: center;
 }
@@ -130,13 +128,12 @@ div#sign-in-div select {
   margin: auto;
 }
 
-
 div#player input#player-name {
 display: block;
 font-size: 24px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3em;  
+  margin-top: 1.5em;  
 }
 
 div#buttons {
@@ -145,11 +142,29 @@ div#buttons {
   text-align: center
 }
 
+div#sign-in-div form#sign-in-form fieldset label {
+  display: block;
+  font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;  
+  }
+
+div#sign-in-div select{
+  display: block;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  padding: .25em 1em; 
+}
+  
 button#submit-play, #results {
 background-color: #415a77;
 display: inline-block;
     margin-left: 2em;
     margin-right: 2em;
+    margin-top: 2em;
     padding: .5em 5em;
     text-decoration-color: whitesmoke;
 }
