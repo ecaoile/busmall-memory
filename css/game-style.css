@@ -83,12 +83,22 @@ td {
   padding: .5em;
 }
 .card-container {
-  height: 191px;
-  perspective: 600;
   position: relative;
-  width: 150px;
   transform: all .3s ease-in-out;
 }
+.two-by-two {
+  height: 191px;
+  width: 150px;
+}
+.four-by-four {
+  height: 159px;
+  width: 125px;
+}
+.six-by-six {
+  height: 100px;
+  width: 79px;
+}
+
 .card, .card-matched {
   height: 100%;
   position: absolute;

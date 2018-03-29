@@ -16,16 +16,20 @@ if (usableDifficulty && usableDifficulty.length) {
   if (usableDifficulty === 'easy') {
     var tableLevel = 2;
     var lives = 3;
+    var cardSizeClass = 'two-by-two';
   } else if (usableDifficulty === 'medium') {
     tableLevel = 4;
     lives = 5;
+    cardSizeClass = 'four-by-four';
   } else if (usableDifficulty === 'hard') {
     tableLevel = 6;
     lives = 7;
+    cardSizeClass = 'six-by-six';
   }
 } else {
   tableLevel = 6;
   lives = 5;
+  cardSizeClass = 'four-by-four';
 }
 
 var storedWins = localStorage.getItem('busmall.wins');
@@ -173,7 +177,7 @@ function renderGame() {
       var randTdElement = tableCellsArray[randTdIndex];
       // randTdElement.innerHTML
       var divElement1 = document.createElement('div');
-      divElement1.className = 'card-container fade-in';
+      divElement1.className = 'card-container ' + cardSizeClass + ' fade-in';
 
       var divElement2 = document.createElement('div');
       divElement2.className = 'card';
