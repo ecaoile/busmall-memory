@@ -171,10 +171,8 @@ td {
 }
 
 #end-of-game ul {
-  color: #171D1C;
   list-style-type: none;
   margin: 1em auto;
-  background: #E8F1F2;
 }
 .life-lost {
   animation-name: example;
