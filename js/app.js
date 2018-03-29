@@ -285,9 +285,9 @@ function handleClick(event) {
         setTimeout(() => {
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
-          // TODO = Break Line in win message
+
           var endOfGameMessage = document.getElementById('end-of-game-message');
-          endOfGameMessage.innerHTML = username + '</br>You are awesome because you won!! <br/> You finished in ' + timer + ' seconds';
+          endOfGameMessage.innerHTML = username + ',</br>You won!!<br/>You finished in ' + timer + ' seconds';
 
           clearInterval(runningTime);
           wins++;
@@ -341,13 +341,26 @@ function handleClick(event) {
 
         setTimeout(() => {
 
+          flipCardsOnLoss();
+
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
 
-          flipCardsOnLoss();
-
           var endOfGameMessage = document.getElementById('end-of-game-message');
           endOfGameMessage.innerHTML = 'Sorry, ' + username + '! <br/>You ran out of lives.';
+
+          var totalWins = document.getElementById('total-wins');
+          totalWins.textContent = wins;
+
+          var totalLosses = document.getElementById('total-losses');
+          totalLosses.textContent = losses;
+
+          var bestTime = document.getElementById('best-time');
+          var bestTimeArray = winTimes.sort(function (a, b) {
+            return a - b;
+          });
+          var bestTimeIndex = bestTimeArray[0];
+          bestTime.textContent = bestTimeIndex;
 
         }, 2000);
 
