@@ -116,16 +116,19 @@ function myFunction() {
   //console.log(h2);
   for (i = 0; i < li.length; i++) {
     var productContainer = li[i].getElementsByTagName('div')[0];
-    console.log(productContainer);
+    //console.log(productContainer);
     var textContainer = productContainer.getElementsByTagName('div')[1];
-    console.log(textContainer);
+    //console.log(textContainer);
+    //console.log(textContainer.textContent);
     var h2 = textContainer.getElementsByTagName('h2');
-    console.log(h2);
-    console.log(h2.textContent);
+    //console.log(h2[0].innerHTML);
+    var h2TextContent = h2[0].innerHTML;
+    //console.log(h2.innerHTML);
+    //console.log(h2.textContent);
     //li = ul[i].getElementsByTagName('li');
     //console.log(li[i]);
     //console.log(li.length);
-    if (li.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    if (h2TextContent.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = '';
     } else {
       li[i].style.display = 'none';
