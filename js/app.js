@@ -85,7 +85,6 @@ var imgClick1;
 var clickedCard1;
 var flipped = false;
 
-
 // Create Table
 for (var i = 0; i < tableLevel; i++) {
   var trElement = document.createElement('tr');
@@ -233,13 +232,20 @@ setTimeout( flipCardsOnLoad, beginWaitTime);
 var classForClick = document.getElementsByClassName('card');
 function addListeners() {
   for ( var k = 0; k < classForClick.length; k++) {
-    classForClick[k].addEventListener('click', handleClick1);
+    classForClick[k].addEventListener('click', handleClick);
   }
 }
 
 setTimeout( addListeners, beginWaitTime + 500);
 
-function handleClick1(event) {
+function flipCardsOnLoss() {
+  flipCardsOnLoad();
+  for (var k = 0; k < classForClick.length; k++) {
+    classForClick[k].removeEventListener('click', handleClick);
+  }
+}
+
+function handleClick(event) {
 
   if(!flipped) {
 
@@ -249,7 +255,7 @@ function handleClick1(event) {
     clickedCard1 = event.path[2];
     clickedCard1.classList.toggle('card-flip');
 
-    clickedCard1.removeEventListener('click', handleClick1);
+    clickedCard1.removeEventListener('click', handleClick);
     flipped = true;
 
     return imgClick1, clickedCard1;
@@ -269,8 +275,8 @@ function handleClick1(event) {
       clickedCard1.className= 'card-matched';
       clickedCard2.className = 'card-matched';
 
-      clickedCard1.removeEventListener('click', handleClick1);
-      clickedCard2.removeEventListener('click', handleClick1);
+      clickedCard1.removeEventListener('click', handleClick);
+      clickedCard2.removeEventListener('click', handleClick);
 
       cardsMatched++;
 
@@ -313,7 +319,7 @@ function handleClick1(event) {
         clickedCard2.classList.toggle('card-flip');
       }, flipWaitTime);
 
-      clickedCard1.addEventListener('click', handleClick1);
+      clickedCard1.addEventListener('click', handleClick);
       lives--;
       setTimeout(() => {
         heartContainer.classList.toggle('life-lost');
@@ -326,6 +332,8 @@ function handleClick1(event) {
         setTimeout(() => {
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
+
+          flipCardsOnLoss();
 
           var endOfGameMessage = document.getElementById('end-of-game-message');
           endOfGameMessage.innerHTML = username + '<br/>You are awesome but you ran out of lives';
