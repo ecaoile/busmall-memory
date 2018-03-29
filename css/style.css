@@ -100,7 +100,7 @@ header nav {
   z-index: 1;
 }
 
-#navcontainer ul {
+/* #navcontainer ul {
 margin: 0;
 padding: 0;
 list-style-type: none;
@@ -127,7 +127,7 @@ color: #fff;
 background-color: #369;
 padding: 1em;
 padding-top: 3px;
-}
+} */
 
 .logo {
 display: block;
@@ -180,6 +180,27 @@ display: inline-block;
   font-weight: 900;
 } */
 
+#home-page {
+  background-image: url('../img/home-bus-interior.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+#home-page:before {
+  background: rgba(0,0,0,0.2);
+  content: '';
+  height: 100vh;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+   }
+
 img#IndexLogo {
   display: block;
   margin-left: auto;
@@ -189,10 +210,12 @@ img#IndexLogo {
  }
 
 #player h1 {
+  color: white;
   font-family: 'Cabin Condensed', sans-serif;
-text-align: center;
-text-decoration-color: #415a77;
-text-shadow: 0 2px whitesmoke;
+  font-size: 1.75em;
+  text-align: center;
+  text-transform: uppercase;
+
 }
 div#sign-in-div {
   text-align: center;
@@ -204,11 +227,40 @@ div#sign-in-div select {
 }
 
 div#player input#player-name {
-display: block;
-font-size: 24px;
+  background: none;
+  border: none;
+  border-bottom: solid 1.5px white; 
+  color: white;
+  display: block;
+  font-size: 24px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5em;  
+  text-align: center;
+  transition: all .2s ease;
+}
+
+div#player input#player-name:focus {
+border-bottom: solid 4px white;
+  outline: none;
+  transform: scale(1.15);
+}
+
+div#player input#player-name::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  font-size: 20px;
+  opacity: 1; /* Firefox */
+
+}
+
+div#player input#player-name:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  font-size: 20px;
+}
+
+div#player input#player-name::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+  font-size: 20px;
 }
 
 div#buttons {
@@ -248,10 +300,11 @@ display: inline-block;
   display: none;
 }
 
-div#footer {
+div#index-footer {
   font-size: 10px;
   margin-top: 5em;
   text-align: center;
+  color: whitesmoke;
 } 
   
 div#prod-page-title {
@@ -266,6 +319,7 @@ display: inline-block;
 margin: 1.5em 8em;
 padding: 1em;
 }
+
 div.prod-img-container {
 float: left;
 margin: .5em 1em .5em .5em;
@@ -348,10 +402,16 @@ div#results-display-text {
   text-shadow: 0 2px whitesmoke;
   }
 
-  div #results-graphs {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
+  div#results-graphs {
+    margin: 0 auto; 
+    margin-top: 1em;
+    width: 50%;
+}
+
+#resultsChart {
+  display: block;
+    width: auto !important;
+    height: 450px !important;
 }
 
 button#bottom-button {
@@ -373,3 +433,5 @@ button#bottom-button {
   margin-left: auto;
   margin-right: auto;
 }
+
+
