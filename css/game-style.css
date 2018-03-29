@@ -47,13 +47,15 @@ section#game-container {
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.8);
 }
 nav#game-status-bar {
-  text-align: center;
-  padding: 2em;
-  color: white;
-  position: absolute;
   background: #0B4F6C;
   border-radius: 0px 15px 15px 0px;
   box-shadow: 1px 1px 22px -5px rgba(0,0,0,0.8);
+  color: white;
+  float:left;
+  position: relative;
+  padding: 2em;
+  text-align: center;
+  width: 15vw;
 }
 nav#game-status-bar ul li {
   font-size: 1.5em;
@@ -138,24 +140,21 @@ td {
   position:relative;
 }
 #end-of-game {
-  background: rgba(0,0,0,0.8);
-  display:none;
-  position: absolute;
-  top: 0;
-  text-align: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 100vw;
-  height: 100vh;
+  background: #0B4F6C;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow: 1px 1px 22px -5px rgba(0,0,0,0.8);
+  color: white;
+  clear:left;
+  float: left;
+  margin-top: 2em;
+  width: 15vw;
 }
-#end-of-game header {
-    color: white;
-    background: none;
-    font-size: 3em;
-    text-align: center;
-    margin-top: 200px;
+#end-of-game h2 {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 1.5em;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 #end-of-game button {
   text-align: center;
@@ -173,9 +172,7 @@ td {
 
 #end-of-game ul {
   color: #171D1C;
-  font-size: 3em;
   list-style-type: none;
-  width: 40%;
   margin: 1em auto;
   background: #E8F1F2;
 }

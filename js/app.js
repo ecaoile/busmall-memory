@@ -154,7 +154,6 @@ function createRandImgIndex() {
   return randImgIndex;
 }
 
-
 function renderGame() {
 
   // for loop to fill whole table
@@ -220,18 +219,15 @@ function renderGame() {
 }
 renderGame();
 
-// flip the cards so the placeholder shows
 function flipCardsOnLoad() {
   var tdlist = memoryTable.getElementsByTagName('td');
   for (var i = 0; i < tdlist.length; i++) {
     var cardClass = tdlist[i].getElementsByClassName('card')[0];
     cardClass.classList.toggle('card-flip');
-    // sideclass.className = 'side back';
   }
 }
 
 setTimeout( flipCardsOnLoad, beginWaitTime);
-// on click flip card back to show image
 
 var classForClick = document.getElementsByClassName('card');
 function addListeners() {
@@ -243,9 +239,10 @@ function addListeners() {
 setTimeout( addListeners, beginWaitTime + 500);
 
 function flipCardsOnLoss() {
-  flipCardsOnLoad();
+  var cardClass = memoryTable.getElementsByClassName('card');
   for (var k = 0; k < classForClick.length; k++) {
-    classForClick[k].removeEventListener('click', handleClick);
+    cardClass[k].classList.toggle('card-flip');
+    cardClass[k].removeEventListener('click', handleClick);
   }
 }
 
@@ -339,23 +336,24 @@ function handleClick(event) {
 
       if (lives === 0) {
         losses++;
+
         clearInterval(runningTime);
+
         setTimeout(() => {
+
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
 
           flipCardsOnLoss();
 
           var endOfGameMessage = document.getElementById('end-of-game-message');
-          endOfGameMessage.innerHTML = username + '<br/>You are awesome but you ran out of lives';
+          endOfGameMessage.innerHTML = 'Sorry, ' + username + '! <br/>You ran out of lives.';
 
         }, 2000);
 
         saveToLocalStorage();
 
       }
-
-      console.log(lives);
       flipped = false;
     }
   }
