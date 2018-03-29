@@ -28,25 +28,63 @@ line-height: 1.25em;
   margin:1em;
 }
 
-.card {
+/* .card {
   border:1px solid #ccc;
   display:table-cell;
   border-spacing:.5em;
   padding:0;
   position:relative;
-}
+} */
 
-dive#about-title {
-    text-align: center;
-    }
-
-#about-name {
+div#about-title {
   text-align: center;
-  color: #fff;
-}
+  font-family: 'Cabin', sans-serif;
+  color: #171d1c;
+  font-weight: 800;
+  font-size: 2em;
+  }
+
+  div#about-bios {
+    text-align: center;
+  }
+  
 
 
-.card header {
+  #about-name {
+    text-align: center;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+  }
+  
+  #overlay {
+  
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+  #overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    border-radius: 15px;
+  }
+  
+  #overlay img.top:hover {
+    opacity: 0;
+  }
+  
+
+/* .card header {
   background:#eee;
   font-size:1.75em;
   font-weight:bold;
@@ -62,7 +100,7 @@ dive#about-title {
 .card figure figcaption {
   padding:.5em;
   text-align:center;
-}
+} */
 section.about-me {
   text-align: center;
 }
@@ -72,6 +110,7 @@ logo {
   padding: 0;
 }
 div.ex {
+  position: relative;
   background-color:  lightblue;
   display: inline-block;
   width: 500px;
@@ -82,6 +121,22 @@ div.ex img {
   width: 300px;
   height: 300px;
 }
+
+div.ex p {
+position: absolute;
+bottom: 20px;
+right: 0;
+left: 0;
+}
+
+
+div.ex a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 
 header {
   background-color: #171D1C;
