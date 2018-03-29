@@ -142,7 +142,7 @@ color: white;
 text-decoration: none;
 text-transform: uppercase;
 }
-nav#game-status-bar {
+/* nav#game-status-bar {
 text-align: center;
 }
 nav#game-status-bar ul {
@@ -152,7 +152,7 @@ nav#game-status-bar ul li {
 display: inline-block;
     font-size: 2em;
   font-weight: 900;
-}
+} */
 
 h1, h2, h3, p, a, li {
   font-family: 'Cabin', sans-serif;
