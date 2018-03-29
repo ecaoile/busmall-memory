@@ -116,9 +116,11 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
+var input = document.getElementById('myInput');
+
 function productSearch() {
-  var input, filter, ul, li, i;
-  input = document.getElementById('myInput');
+  var filter, ul, li, i;
+  //input = document.getElementById('myInput');
   filter = input.value.toUpperCase();
   ul = document.getElementById('product-list');
   li = ul.getElementsByTagName('li');
@@ -135,6 +137,7 @@ function productSearch() {
     }
   }
 }
+
 
 renderProductPage();
 displayBottomButton();
