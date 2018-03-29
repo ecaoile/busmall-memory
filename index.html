@@ -1,1 +1,68 @@
+<!DOCTYPE html>
 
+<head>
+  <title> Bus Mall Home </title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:600|Source+Sans+Pro:600" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body id="home-page">
+  <header>
+    <nav id="busmall-nav">
+      <ul>
+        <li>
+          <a href="index.html"> Home </a>
+        </li>
+        <li>
+          <a href="./html/results.html"> Results </a>
+        </li>
+        <li>
+          <a href="./html/products.html"> Products </a>
+        </li>
+        <li>
+          <a href="./html/about_us.html"> About Us </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div id="IndexLogo">
+    <img src="./img/bus-mall-memory-logo.png" id="IndexLogo">
+  </div>
+
+  <div id="player">
+    <h1 id="first-greeting"> Wanna play our memory game ? </h1>
+
+    <div id="sign-in-div">
+      <form id="sign-in-form">
+        <fieldset>
+          <label for="userName"></label>
+          <input type="text" name="userName" id="player-name" placeholder="Type your first name here">
+
+          <label for="difficulty"></label>
+          <select name="difficulty">
+            <option value="easy"> Easy </option>
+            <option value="medium"> Medium </option>
+            <option value="hard"> Hard </option>
+          </select>
+
+          <button id="submit-play"> Play </button>
+        </fieldset>
+      </form>
+    </div>
+
+  </div>
+
+  <div id="buttons">
+    <button id="results">
+      <a href="./html/results.html"> Results
+      </a>
+    </button>
+  </div>
+
+  <div id="index-footer"> Copyright &copy 2018 Bus-Ta Moves </div>
+
+  <script src="./js/splash.js"></script>
+</body>
