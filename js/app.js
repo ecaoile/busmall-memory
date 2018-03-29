@@ -322,8 +322,15 @@ function handleClick(event) {
       clickedCard1.addEventListener('click', handleClick);
       lives--;
       setTimeout(() => {
+
         heartContainer.classList.toggle('life-lost');
+
         displayLives();
+
+        setTimeout(() => {
+          heartContainer.classList.toggle('life-lost');
+        }, 1000);
+
       }, 1000);
 
       if (lives === 0) {
