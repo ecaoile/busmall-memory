@@ -116,7 +116,7 @@ new Product ('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', './products.html
 new Product ('Dog Beers', '../img/dog-beers.jpg', './products.html#dog-beers');
 new Product ('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', './products.html#donald-trump-toilet-paper');
 new Product ('Emergency Unicorn', '../img/emergency-unicorn.jpg', './products.html#emergency-unicorn');
-new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', './products.html#fez-bigfoot');
+new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', './products.html#bigfoot-rescue-fez');
 new Product ('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', './products.html#glow-finger-tentacles');
 new Product ('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', './products.html#inflatable-unicorn-horn-cats');
 new Product ('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', './products.html#instant-clip-on-man-bun');
