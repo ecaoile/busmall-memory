@@ -116,6 +116,7 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
+// targets the delete button for the search and sets it to display none on load
 var resetButton = document.getElementById('dat-reset');
 resetButton.style.display = 'none';
 

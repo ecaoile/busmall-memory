@@ -393,13 +393,13 @@ div#full-prod-img img {
   position: relative;
 }
 
-/* https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html  - target Chrome*/
+/* https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html  - browser specific styling: target Chrome*/
 @supports (-webkit-appearance:none) {
   #dat-reset {
     top:.6em;
   }
 }  
-/* target Firefox */
+/* browser-specific styling: target Firefox */
 _:-moz-tree-row(hover), #dat-reset {
   top:-.25em;
 }
