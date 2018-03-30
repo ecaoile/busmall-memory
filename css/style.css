@@ -371,8 +371,16 @@ background-color: #0B4F6C;
 box-shadow: 5px 5px #415A77;
 color: #E8F1F2;
 display: inline-block;
-margin: 1.5em 8em;
+margin: 1.5em auto;
 padding: 1em;
+width: 100%;
+}
+div.product-container p {
+  font-size: 1.5em;
+}
+div.product-container h2 {
+  margin-bottom: .25em;
+  font-size: 2em;
 }
 
 div.prod-img-container {
@@ -402,6 +410,7 @@ div#full-prod-img {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: none;
+  z-index: 5;
 }
 /* taken from https://css-tricks.com/centering-css-complete-guide/ */
 div#full-prod-img img {
@@ -559,4 +568,8 @@ box-shadow: 0 4.5px #666;
 
   margin: .25em .125em;
   font-size:4em;
+}
+#product-list {
+  margin: 0 auto;
+  width: 80vw;
 }
