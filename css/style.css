@@ -27,42 +27,50 @@ line-height: 1.25em;
   box-shadow: 1px 1px 1px 1px #444;
   margin:1em;
 }
-
-.card {
-  border:1px solid #ccc;
-  display:table-cell;
-  border-spacing:.5em;
-  padding:0;
-  position:relative;
-}
-
-dive#about-title {
-    text-align: center;
-    }
-
-#about-name {
+div#about-title {
   text-align: center;
-  color: #fff;
-}
+  font-family: 'Cabin', sans-serif;
+  color: #171d1c;
+  font-weight: 800;
+  font-size: 2em;
+  }
 
+  div#about-bios {
+    text-align: center;
+  }
+  #about-name {
+    text-align: center;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.8em;
+  }
+  
+  #overlay {
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
 
-.card header {
-  background:#eee;
-  font-size:1.75em;
-  font-weight:bold;
-  padding:.25em;
-}
-
-.card figure {
-  border:1px solid #ccc;
-  display:block;
-  margin:1em auto;
-}
-
-.card figure figcaption {
-  padding:.5em;
-  text-align:center;
-}
+  #overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 4em auto;
+    bottom: 0;
+    right: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    border-radius: 35px;
+  }
+  
+  #overlay img.top:hover {
+    opacity: 0;
+  }
 section.about-me {
   text-align: center;
 }
@@ -72,8 +80,9 @@ logo {
   padding: 0;
 }
 div.ex {
-  background-color:  lightblue;
+  position: relative;
   display: inline-block;
+  margin: 2em 1em;
   width: 500px;
   height: 500px;
   vertical-align: middle;
@@ -82,6 +91,20 @@ div.ex img {
   width: 300px;
   height: 300px;
 }
+
+div.ex p {
+padding-top: 1em;
+font-size: 1.6em;
+}
+
+
+div.ex a {
+
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 
 header {
   background-color: #171D1C;
@@ -99,36 +122,6 @@ header nav {
   background: #004777;
   z-index: 1;
 }
-
-/* #navcontainer ul {
-margin: 0;
-padding: 0;
-list-style-type: none;
-text-align: center;
-padding-top: 4px;
-}
-
-#navcontainer ul li { 
-  display: inline; 
-  padding: 1em;
-  padding-top: 3px;
-}
-
-#navcontainer ul li a {
-text-decoration: none;
-padding: 1em;
-color: #fff;
-background-color: lightseagreen;
-padding-top: 3px;
-}
-
-#navcontainer ul li a:hover {
-color: #fff;
-background-color: #369;
-padding: 1em;
-padding-top: 3px;
-} */
-
 .logo {
 display: block;
 margin-left: auto;
@@ -168,18 +161,6 @@ color: white;
 text-decoration: none;
 text-transform: uppercase;
 }
-/* nav#game-status-bar {
-text-align: center;
-}
-nav#game-status-bar ul {
-padding: 0;
-}
-nav#game-status-bar ul li {
-display: inline-block;
-    font-size: 2em;
-  font-weight: 900;
-} */
-
 #home-page {
   background-image: url('../img/home-bus-interior.jpg');
   background-attachment: fixed;
@@ -316,8 +297,16 @@ background-color: #0B4F6C;
 box-shadow: 5px 5px #415A77;
 color: #E8F1F2;
 display: inline-block;
-margin: 1.5em 8em;
+margin: 1.5em auto;
 padding: 1em;
+width: 100%;
+}
+div.product-container p {
+  font-size: 1.5em;
+}
+div.product-container h2 {
+  margin-bottom: .25em;
+  font-size: 2em;
 }
 
 div.prod-img-container {
@@ -347,7 +336,9 @@ div#full-prod-img {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: none;
+  z-index: 5;
 }
+
 /* taken from https://css-tricks.com/centering-css-complete-guide/ */
 div#full-prod-img img {
   position: absolute;
@@ -383,11 +374,39 @@ div#full-prod-img img {
   background-position: 8px;
   background-size: 30px;
   background-repeat: no-repeat;
-  width: 50%;
+  width: 35%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  padding: 1.2em 2.5em 1.2em 2.5em;
   border: 1px solid #ddd;
-  margin: 2em 8em;
+  margin: 2em -2.75em 2em 7.5em;
+}
+
+#dat-reset {
+  background-image: url('../img/close-x.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 3em;  
+  height: 3em;
+  width: 3em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+/* https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html  - browser specific styling: target Chrome*/
+@supports (-webkit-appearance:none) {
+  #dat-reset {
+    top:.6em;
+  }
+}  
+/* browser-specific styling: target Firefox */
+_:-moz-tree-row(hover), #dat-reset {
+  top:-.25em;
+}
+
+#dat-reset:focus {
+  outline: none;
 }
 
 div#results-display-text {
@@ -409,14 +428,12 @@ div#results-display-text {
 }
 
 #resultsChart {
-  display: block;
     width: auto !important;
     height: 450px !important;
+    margin: 0 auto;
 }
 
 button#bottom-button {
-  display: inline-block;
-  padding: 15px 25px;
   font-size: 24px;
   cursor: pointer;
   margin: 1em;
@@ -432,6 +449,35 @@ button#bottom-button {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: background .2s;
 }
 
+button#bottom-button:hover {
+  background-color: #e8f1f2;
+  color: #171d1c;
+  cursor: pointer;
+}
 
+button#bottom-button:active {
+box-shadow: 0 4.5px #666;
+}
+
+#footer {
+  font-size: 10px;
+  margin-top: 5em;
+  margin-bottom: 3em;
+  text-align: center;
+} 
+
+#footer, #footer a{
+  color: #e8f1f2;
+}
+#footer svg {
+
+  margin: .25em .125em;
+  font-size:4em;
+}
+#product-list {
+  margin: 0 auto;
+  width: 80vw;
+}

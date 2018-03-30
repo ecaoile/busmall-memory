@@ -12,7 +12,7 @@ function Product(imgName, filePath, id, desc) {
 }
 // Create Instances
 // new Product(imgName, filePath, link);
-new Product('Bacon Beans', '../img/bacon-beans.jpg', 'bacon-beans', 'Do you like bacon and jellybeans? You can get the best of both worlds with bacon beans! Now you can clog your arteries and get diabetes (or as Wilford Brimeley would say it: DIABEETUS) at the same time!');
+new Product('Bacon Beans', '../img/bacon-beans.jpg', 'bacon-beans', 'Do you like bacon and jellybeans? You can get the best of both worlds with bacon beans! Now you can clog your arteries and get diabetes (or as Wilford Brimley would say it: DIABEETUS) at the same time!');
 new Product('Banana Slug Mask', '../img/banana-slug-mask.jpg', 'banana-slug-mask', 'Sometimes, you might be feeling sluggish and want to show how you feel to the whole world. With this banana slug mask, you\'ll be the life of the party, or should I say the slug of the party?!');
 new Product('Bigfoot Rescue Team Fez', '../img/fez-bigfoot.jpg', 'bigfoot-rescue-fez', 'Show your pride in bigfoot\'s research and rescue unit with this classy fez! Color is red, so people know you mean business. We can\'t guarantee that this fez will actually help you find bigfoot, but we can guarantee it\'ll make you look special.');
 new Product('Cat Butt Gum', '../img/cat-butt-gum.jpg', 'cat-butt-gum', 'It sounds nasty, but sometimes you want gum that has as bad of an attitude as you do on cranky days. You can also give it as a present to that special someone who needs to know how you feel about them.');
@@ -116,15 +116,25 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
-renderProductPage();
-displayBottomButton();
+var resetButton = document.getElementById('dat-reset');
+resetButton.style.display = 'none';
+resetButton.addEventListener('click', resetSearch);
+var ul = document.getElementById('product-list');
+var li = ul.getElementsByTagName('li');
+
 function productSearch() {
-  var input, filter, ul, li, i;
-  input = document.getElementById('myInput');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById('product-list');
-  li = ul.getElementsByTagName('li');
-  for (i = 0; i < li.length; i++) {
+  var input = document.getElementById('myInput');
+  var filter = input.value.toUpperCase();
+
+  if (filter) {
+    resetButton.style.display = '';
+
+  }
+  else {
+    resetButton.style.display = 'none';
+  }
+
+  for (var i = 0; i < li.length; i++) {
     var productContainer = li[i].getElementsByTagName('div')[0];
     var textContainer = productContainer.getElementsByTagName('div')[1];
     var h2 = textContainer.getElementsByTagName('h2');
@@ -133,7 +143,17 @@ function productSearch() {
       li[i].style.display = '';
     } else {
       li[i].style.display = 'none';
-
     }
   }
 }
+
+function resetSearch(event) {
+  if (event.target.id === 'dat-reset') {
+    for (var i = 0; i < li.length; i++) {
+      li[i].style.display = '';
+    }
+  }
+  resetButton.style.display = 'none';
+}
+renderProductPage();
+displayBottomButton();
