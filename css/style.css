@@ -338,6 +338,7 @@ div#full-prod-img {
   display: none;
   z-index: 5;
 }
+
 /* taken from https://css-tricks.com/centering-css-complete-guide/ */
 div#full-prod-img img {
   position: absolute;
@@ -373,49 +374,39 @@ div#full-prod-img img {
   background-position: 8px;
   background-size: 30px;
   background-repeat: no-repeat;
-  width: 40%;
+  width: 35%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  padding: 1.2em 2.5em 1.2em 2.5em;
   border: 1px solid #ddd;
-  margin: 2em 8em;
+  margin: 2em -2.75em 2em 7.5em;
 }
 
 #dat-reset {
   background-image: url('../img/close-x.png');
-  background-position: 10px;
-  background-size: 30px;  
+  background-position: center;
   background-repeat: no-repeat;
-  height: 40px;
-  width: 40px;
+  background-size: 3em;  
+  height: 3em;
+  width: 3em;
   border: none;
   background-color: transparent;
-  border: 0px solid;
   cursor: pointer;
   position: relative;
-  top: 11.5px;
-  left: -180px;
+}
+
+/* https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html  - browser specific styling: target Chrome*/
+@supports (-webkit-appearance:none) {
+  #dat-reset {
+    top:.6em;
+  }
+}  
+/* browser-specific styling: target Firefox */
+_:-moz-tree-row(hover), #dat-reset {
+  top:-.25em;
 }
 
 #dat-reset:focus {
   outline: none;
-}
-span.deleteicon {
-  position: relative;
-}
-span.deleteicon span {
-  position: absolute;
-  display: block;
-  top: 0px;
-  right: 145px;
-  width: 16px;
-  height: 16px;
-  background: black 0 -690px;
-  cursor: pointer;
-}
-
-span.deleteicon input {
-  padding-right: 16px;
-  box-sizing: border-box;
 }
 
 div#results-display-text {
