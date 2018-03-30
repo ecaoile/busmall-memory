@@ -374,11 +374,11 @@ div#full-prod-img img {
   background-position: 8px;
   background-size: 30px;
   background-repeat: no-repeat;
-  width: 40%;
+  width: 35%;
   font-size: 16px;
   padding: 1.2em 2.5em 1.2em 2.5em;
   border: 1px solid #ddd;
-  margin: 2em -3.2em 2em 7.5em;
+  margin: 2em -2.5em 2em 7.5em;
 }
 
 #dat-reset {
