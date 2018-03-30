@@ -118,12 +118,13 @@ function displayBottomButton() {
 
 var resetButton = document.getElementById('dat-reset');
 resetButton.style.display = 'none';
+resetButton.addEventListener('click', resetSearch);
+var ul = document.getElementById('product-list');
+var li = ul.getElementsByTagName('li');
 
 function productSearch() {
   var input = document.getElementById('myInput');
   var filter = input.value.toUpperCase();
-  var ul = document.getElementById('product-list');
-  var li = ul.getElementsByTagName('li');
 
   if (filter) {
     resetButton.style.display = '';
@@ -146,5 +147,13 @@ function productSearch() {
   }
 }
 
+function resetSearch(event) {
+  if (event.target.id === 'dat-reset') {
+    for (var i = 0; i < li.length; i++) {
+      li[i].style.display = '';
+    }
+  }
+  resetButton.style.display = 'none';
+}
 renderProductPage();
 displayBottomButton();
