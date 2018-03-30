@@ -82,8 +82,8 @@ logo {
 div.ex {
   position: relative;
   display: inline-block;
-  margin: 0 1em;
-  width: auto;
+  margin: 2em 1em;
+  width: 500px;
   height: 500px;
   vertical-align: middle;
 }
@@ -93,15 +93,13 @@ div.ex img {
 }
 
 div.ex p {
-position: absolute;
-top: 373px;
-right: 0;
-left: 0;
+padding-top: 1em;
+font-size: 1.6em;
 }
 
 
 div.ex a {
-  position: absolute;
+
   bottom: 0;
   right: 0;
   left: 0;
