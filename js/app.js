@@ -116,7 +116,7 @@ new Product ('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', './products.html
 new Product ('Dog Beers', '../img/dog-beers.jpg', './products.html#dog-beers');
 new Product ('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', './products.html#donald-trump-toilet-paper');
 new Product ('Emergency Unicorn', '../img/emergency-unicorn.jpg', './products.html#emergency-unicorn');
-new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', './products.html#fez-bigfoot');
+new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', './products.html#bigfoot-rescue-fez');
 new Product ('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', './products.html#glow-finger-tentacles');
 new Product ('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', './products.html#inflatable-unicorn-horn-cats');
 new Product ('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', './products.html#instant-clip-on-man-bun');
@@ -285,9 +285,9 @@ function handleClick(event) {
         setTimeout(() => {
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
-          // TODO = Break Line in win message
+
           var endOfGameMessage = document.getElementById('end-of-game-message');
-          endOfGameMessage.innerHTML = username + '</br>You are awesome because you won!! <br/> You finished in ' + timer + ' seconds';
+          endOfGameMessage.innerHTML = username + ',</br>You won!!<br/>You finished in ' + timer + ' seconds';
 
           clearInterval(runningTime);
           wins++;
@@ -341,13 +341,26 @@ function handleClick(event) {
 
         setTimeout(() => {
 
+          flipCardsOnLoss();
+
           var endGameDiv = document.getElementById('end-of-game');
           endGameDiv.style.display = 'inherit';
 
-          flipCardsOnLoss();
-
           var endOfGameMessage = document.getElementById('end-of-game-message');
           endOfGameMessage.innerHTML = 'Sorry, ' + username + '! <br/>You ran out of lives.';
+
+          var totalWins = document.getElementById('total-wins');
+          totalWins.textContent = wins;
+
+          var totalLosses = document.getElementById('total-losses');
+          totalLosses.textContent = losses;
+
+          var bestTime = document.getElementById('best-time');
+          var bestTimeArray = winTimes.sort(function (a, b) {
+            return a - b;
+          });
+          var bestTimeIndex = bestTimeArray[0];
+          bestTime.textContent = bestTimeIndex;
 
         }, 2000);
 

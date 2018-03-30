@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var usableJsonWins = 0;
 var usableJsonLosses = 0;
@@ -44,7 +44,8 @@ var resultsChart = new Chart(results, {
   options: {
     legend: {
       labels: {
-        fontColor: '#171d1c'
+        fontColor: '#171d1c',
+        fontSize: 48,
       }
     }
   }
