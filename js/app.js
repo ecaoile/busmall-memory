@@ -131,7 +131,7 @@ new Product ('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', './pro
 new Product ('Unicorn Hooves', '../img/unicorn-hooves.jpg', './products.html#unicorn-hooves');
 new Product ('Unicorn Mints', '../img/unicorn-mints.jpg', './products.html#unicorn-mints');
 new Product ('Uranus Soap', '../img/uranus-soap.jpg', './products.html#uranus-soap');
-new Product ('World Domination Notebook', '../img/world-domination-notebook.jpg', './products.html#world-domination-notebook');
+new Product ('World Domination Notebook', '../img/world-dom.jpg', './products.html#world-domination-notebook');
 
 //array of table's td
 var tableCellsArray = memoryTable.getElementsByTagName('td');
