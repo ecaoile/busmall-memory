@@ -27,10 +27,12 @@ function userInput(event) {
   userName = event.target.userName.value;
   difficulty = event.target.difficulty.value;
 
+  if (userName) {
+    var usableUserName = JSON.stringify(userName);
+    localStorage.setItem('busmall.playername', usableUserName);
+  }
 
-  var usableUserName = JSON.stringify(userName);
   var usableDifficulty = JSON.stringify(difficulty);
-  localStorage.setItem('busmall.playername', usableUserName);
   localStorage.setItem('busmall.difficulty', usableDifficulty);
 
   window.location = './html/game.html#memory-game';
