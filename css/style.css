@@ -476,12 +476,28 @@ box-shadow: 0 4.5px #666;
 
 #footer, #footer a{
   color: #e8f1f2;
-}
-#footer svg {
 
-  margin: .25em .125em;
-  font-size:4em;
 }
+
+#footer a {
+  display:inline;
+}
+
+#footer svg {
+  font-size:4em;
+  text-align: center;
+}
+
+
+.icon-container {
+  display: inline-block;
+  margin: 1em .5em;
+}
+
+#all-icon-container {
+  text-align: center;
+}
+
 #product-list {
   margin: 0 auto;
   width: 80vw;
