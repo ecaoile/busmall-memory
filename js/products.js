@@ -122,6 +122,13 @@ resetButton.addEventListener('click', resetSearch);
 var ul = document.getElementById('product-list');
 var li = ul.getElementsByTagName('li');
 
+/* creates notification that appears when there are no matches */
+var noneDisplayed = document.getElementById('none-displayed');
+noneDisplayed.style.display = 'none';
+var noMatchText = document.createElement('h2');
+noMatchText.textContent = 'Your search query does not match any of our products. Please clear the search box and try again.';
+noneDisplayed.appendChild(noMatchText);
+
 function productSearch() {
   var input = document.getElementById('myInput');
   var filter = input.value.toUpperCase();
@@ -133,17 +140,26 @@ function productSearch() {
   else {
     resetButton.style.display = 'none';
   }
-
+  var numDisplayed = 0;
   for (var i = 0; i < li.length; i++) {
-    var productContainer = li[i].getElementsByTagName('div')[0];
+    if (li[i].getElementsByTagName('div')[0]) {
+      var productContainer = li[i].getElementsByTagName('div')[0];
+    }
     var textContainer = productContainer.getElementsByTagName('div')[1];
     var h2 = textContainer.getElementsByTagName('h2');
     var h2TextContent = h2[0].innerHTML;
     if (h2TextContent.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = '';
+      numDisplayed++;
     } else {
       li[i].style.display = 'none';
     }
+  }
+  if (numDisplayed === 0) {
+    noneDisplayed.style.display = '';
+  }
+  else {
+    noneDisplayed.style.display = 'none';
   }
 }
 
@@ -154,6 +170,8 @@ function resetSearch(event) {
     }
   }
   resetButton.style.display = 'none';
+  noneDisplayed.style.display = 'none';
+
 }
 renderProductPage();
 displayBottomButton();

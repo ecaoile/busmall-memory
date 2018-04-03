@@ -41,11 +41,14 @@
     </div>
   </div>
   <form action="" method="get">
-    <input type="text" id="myInput" onclick="productSearch()" onkeyup="productSearch()" placeholder="Search for products..."
-      title="Type in a product name." autocomplete="off">
-    <input type="reset" id="dat-reset" value="" alt="clear" onkeyup="productSearch()" onclick="productSearch()" />
+    <input type="text" id="myInput" onkeyup="productSearch()" placeholder="Search for products..." title="Type in a product name."
+      autocomplete="off">
+    <input type="reset" id="dat-reset" value="" alt="clear" />
   </form>
   <ul id="product-list"></ul>
+  <div id="none-displayed">
+    <i class="fas fa-exclamation-circle"></i>
+  </div>
   <div id="bottom-button"></div>
 
   <footer>

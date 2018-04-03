@@ -115,6 +115,5 @@ https://stackoverflow.com/questions/9604982/backface-visibility-not-working-prop
 Research on how to get card flips (functional aspect) to work on browsers besides Chrome (lack of event.path):
 https://stackoverflow.com/questions/39245488/event-path-undefined-with-firefox-and-vue-js
 
-
-
-
+Research for browser-specific CSS styling:
+https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html

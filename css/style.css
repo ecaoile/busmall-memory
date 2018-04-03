@@ -394,7 +394,12 @@ div#full-prod-img img {
   position: relative;
 }
 
-/* https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html  - browser specific styling: target Chrome*/
+#none-displayed {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+}
+/* browser specific styling: target Chrome */
 @supports (-webkit-appearance:none) {
   #dat-reset {
     top:.6em;
