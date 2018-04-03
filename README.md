@@ -109,6 +109,11 @@ Photo by MOHAMED OSAMA on Unsplash
 Social media icons:
 https://fontawesome.com/icons?d=gallery&m=free
 
+Research on how to get card flips (visual aspect) to work on browsers besides Chome:
+https://stackoverflow.com/questions/9604982/backface-visibility-not-working-properly-in-firefox-works-in-safari
+
+Research on how to get card flips (functional aspect) to work on browsers besides Chrome (lack of event.path):
+https://stackoverflow.com/questions/39245488/event-path-undefined-with-firefox-and-vue-js
 
 
 

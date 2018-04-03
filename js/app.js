@@ -108,30 +108,30 @@ function Product(imgName, filePath, link) {
 }
 // Create Instances
 // new Product(imgName, filePath, link);
-new Product ('Bacon Beans', '../img/bacon-beans.jpg', './products.html#bacon-beans');
-new Product ('Banana Slug Mask', '../img/banana-slug-mask.jpg', './products.html#banana-slug-mask');
-new Product ('Cat Butt Gum', '../img/cat-butt-gum.jpg', './products.html#cat-butt-gum');
-new Product ('Creepy Horse Man', '../img/creepy-horse-man.jpg', './products.html#creepy-horse-man.jpg');
-new Product ('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', './products.html#cupcake-lip-balm');
-new Product ('Dog Beers', '../img/dog-beers.jpg', './products.html#dog-beers');
-new Product ('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', './products.html#donald-trump-toilet-paper');
-new Product ('Emergency Unicorn', '../img/emergency-unicorn.jpg', './products.html#emergency-unicorn');
-new Product ('Fez Bigfoot', '../img/fez-bigfoot.jpg', './products.html#bigfoot-rescue-fez');
-new Product ('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', './products.html#glow-finger-tentacles');
-new Product ('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', './products.html#inflatable-unicorn-horn-cats');
-new Product ('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', './products.html#instant-clip-on-man-bun');
-new Product ('Macho Tissues', '../img/macho-tissues.jpg', './products.html#macho-tissues');
-new Product ('Nose Flute', '../img/nose-flute.jpg', './products.html#nose-flute');
-new Product ('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', './products.html#rubber-chicken-socks-feet');
-new Product ('Skeleton Scarf', '../img/skeleton-scarf.jpg', './products.html#skeleton-scarf');
-new Product ('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', './products.html#squirrel-underpants-ornament');
-new Product ('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', './products.html#surprise-treasure-box');
-new Product ('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', './products.html#tech-monks-teacups.jpg');
-new Product ('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', './products.html#tin-foil-hat-for-cats');
-new Product ('Unicorn Hooves', '../img/unicorn-hooves.jpg', './products.html#unicorn-hooves');
-new Product ('Unicorn Mints', '../img/unicorn-mints.jpg', './products.html#unicorn-mints');
-new Product ('Uranus Soap', '../img/uranus-soap.jpg', './products.html#uranus-soap');
-new Product ('World Domination Notebook', '../img/world-dom.jpg', './products.html#world-domination-notebook');
+new Product('Bacon Beans', '../img/bacon-beans.jpg', './products.html#bacon-beans');
+new Product('Banana Slug Mask', '../img/banana-slug-mask.jpg', './products.html#banana-slug-mask');
+new Product('Cat Butt Gum', '../img/cat-butt-gum.jpg', './products.html#cat-butt-gum');
+new Product('Creepy Horse Man', '../img/creepy-horse-man.jpg', './products.html#creepy-horse-man.jpg');
+new Product('Cupcake Lip Balm', '../img/cupcake-lip-balm.jpg', './products.html#cupcake-lip-balm');
+new Product('Dog Beers', '../img/dog-beers.jpg', './products.html#dog-beers');
+new Product('Donald Trump Toilet Paper', '../img/donald-trump-toilet-paper.jpg', './products.html#donald-trump-toilet-paper');
+new Product('Emergency Unicorn', '../img/emergency-unicorn.jpg', './products.html#emergency-unicorn');
+new Product('Fez Bigfoot', '../img/fez-bigfoot.jpg', './products.html#bigfoot-rescue-fez');
+new Product('Glowing Finger Tentacles', '../img/glow-finger-tentacles.gif', './products.html#glow-finger-tentacles');
+new Product('Inflatable Unicorn Horn for Cats', '../img/inflatable-unicorn-horn-cats.jpg', './products.html#inflatable-unicorn-horn-cats');
+new Product('Instant Clip-On Man Bun', '../img/instant-clip-on-man-bun.jpg', './products.html#instant-clip-on-man-bun');
+new Product('Macho Tissues', '../img/macho-tissues.jpg', './products.html#macho-tissues');
+new Product('Nose Flute', '../img/nose-flute.jpg', './products.html#nose-flute');
+new Product('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', './products.html#rubber-chicken-socks-feet');
+new Product('Skeleton Scarf', '../img/skeleton-scarf.jpg', './products.html#skeleton-scarf');
+new Product('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', './products.html#squirrel-underpants-ornament');
+new Product('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', './products.html#surprise-treasure-box');
+new Product('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', './products.html#tech-monks-teacups.jpg');
+new Product('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', './products.html#tin-foil-hat-for-cats');
+new Product('Unicorn Hooves', '../img/unicorn-hooves.jpg', './products.html#unicorn-hooves');
+new Product('Unicorn Mints', '../img/unicorn-mints.jpg', './products.html#unicorn-mints');
+new Product('Uranus Soap', '../img/uranus-soap.jpg', './products.html#uranus-soap');
+new Product('World Domination Notebook', '../img/world-dom.jpg', './products.html#world-domination-notebook');
 
 //array of table's td
 var tableCellsArray = memoryTable.getElementsByTagName('td');
@@ -247,12 +247,39 @@ function flipCardsOnLoss() {
 }
 
 function handleClick(event) {
+  if (event.path) {
+    console.log('Supports `path`');
+  } else if (event.composedPath) {
+    console.log('Supports `composedPath`');
+  } else {
+    console.log('Supports neither `path` nor `composedPath`');
+  }
 
+  // Per the above, get the path if we can
+  var path = event.path || (event.composedPath && event.composedPath());
+
+  // Show it if we got it
+  if (path) {
+    console.log('Path (' + path.length + ')');
+    Array.prototype.forEach.call(
+      path,
+      function (entry) {
+        console.log(entry.nodeName);
+      }
+    );
+  }
   if (!flipped) {
 
     imgClick1 = event.target.alt;
 
-    clickedCard1 = event.path[2];
+    if (event.path) {
+      clickedCard1 = event.path[2];
+      console.log(event.path[2]);
+    }
+    else {
+      clickedCard1 = event.composedPath()[2];
+      console.log(event.composedPath()[2]);
+    }
     clickedCard1.classList.toggle('card-flip');
 
     clickedCard1.removeEventListener('click', handleClick);
@@ -264,7 +291,13 @@ function handleClick(event) {
 
     var imgClick2 = event.target.alt;
 
-    var clickedCard2 = event.path[2];
+    if (event.path) {
+      var clickedCard2 = event.path[2];
+    }
+    else {
+      clickedCard2 = event.composedPath()[2];
+      console.log(event.composedPath()[2]);
+    }
     clickedCard2.classList.toggle('card-flip');
 
     if (imgClick1 === imgClick2) {
