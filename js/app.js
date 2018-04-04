@@ -126,7 +126,7 @@ new Product('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', './p
 new Product('Skeleton Scarf', '../img/skeleton-scarf.jpg', './products.html#skeleton-scarf');
 new Product('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', './products.html#squirrel-underpants-ornament');
 new Product('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', './products.html#surprise-treasure-box');
-new Product('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', './products.html#tech-monks-teacups.jpg');
+new Product('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', './products.html#tech-monks-teacups');
 new Product('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', './products.html#tin-foil-hat-for-cats');
 new Product('Unicorn Hooves', '../img/unicorn-hooves.jpg', './products.html#unicorn-hooves');
 new Product('Unicorn Mints', '../img/unicorn-mints.jpg', './products.html#unicorn-mints');
