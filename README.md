@@ -120,3 +120,6 @@ https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-st
 
 Research on how to implement the flip effect on Safari:
 https://stackoverflow.com/questions/34834349/css-flip-animation-not-working-in-safari
+
+Research on responsive design with media queries:
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
