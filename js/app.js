@@ -247,38 +247,15 @@ function flipCardsOnLoss() {
 }
 
 function handleClick(event) {
-  if (event.path) {
-    console.log('Supports `path`');
-  } else if (event.composedPath) {
-    console.log('Supports `composedPath`');
-  } else {
-    console.log('Supports neither `path` nor `composedPath`');
-  }
-
-  // Per the above, get the path if we can
-  var path = event.path || (event.composedPath && event.composedPath());
-
-  // Show it if we got it
-  if (path) {
-    console.log('Path (' + path.length + ')');
-    Array.prototype.forEach.call(
-      path,
-      function (entry) {
-        console.log(entry.nodeName);
-      }
-    );
-  }
   if (!flipped) {
 
     imgClick1 = event.target.alt;
 
     if (event.path) {
       clickedCard1 = event.path[2];
-      console.log(event.path[2]);
     }
     else {
       clickedCard1 = event.composedPath()[2];
-      console.log(event.composedPath()[2]);
     }
     clickedCard1.classList.toggle('card-flip');
 
@@ -296,7 +273,6 @@ function handleClick(event) {
     }
     else {
       clickedCard2 = event.composedPath()[2];
-      console.log(event.composedPath()[2]);
     }
     clickedCard2.classList.toggle('card-flip');
 
