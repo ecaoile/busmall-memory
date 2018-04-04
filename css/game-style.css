@@ -129,8 +129,8 @@ td {
   transform: rotateY(180deg);
 }
 .card .side a, .card-matched .side a {
-  /*backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;*/
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transform: rotateX(0deg);
   position: absolute;
   bottom: 0;
