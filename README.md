@@ -117,3 +117,6 @@ https://stackoverflow.com/questions/39245488/event-path-undefined-with-firefox-a
 
 Research for browser-specific CSS styling:
 https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html
+
+Research on how to implement the flip effect on Safari:
+https://stackoverflow.com/questions/34834349/css-flip-animation-not-working-in-safari

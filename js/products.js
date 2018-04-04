@@ -31,7 +31,7 @@ new Product('Rubber Chicken Socks', '../img/rubber-chicken-socks-feet.jpg', 'rub
 new Product('Skeleton Scarf', '../img/skeleton-scarf.jpg', 'skeleton-scarf', 'Do you love skeletons? Do you love them enough to wear them? Well, don\'t keep your skeletons in the closet. Take them out and put them on in the form of a scarf! This skeleton will show everyone how passionate you are about skeletons.');
 new Product('Squirrel Underpants Ornament', '../img/squirrel-underpants-ornament-spin.gif', 'squirrel-underpants-ornament', 'Tired of regular spherical ornaments? We\'ve got something unique for you. How about a squirrel wearing underpants? It even has batteries for when you want it to spin! Now your uber 1337 squirrel can do 360 noscope! This will certainly spice up your Christmas tree.');
 new Product('Surprise Treasure Box', '../img/surprise-treasure-box.jpg', 'surprise-treasure-box', 'Do you like surprises? Do you like treasure boxes? Well, here\'s a surprise treasure box for you! What\'s inside? Who knows?! It could be treasure. It could be junk. Note: because the surprise inside the treasure could be a variety of items, the product weight can vary between different customers/purchases. Please be prepared to lift up to 100 lbs.');
-new Product('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', 'tech-monks-teacups', 'Are you the kind of person who likes to mix tradition with technology? Are you a monk at heart, but a techie at the same time? Most monks are thought of as not technically savvy, but you know very well that there are some people who break the mold. Now you can display the kind of diversity that you embody with these tech monkey cups. One cup contains a monk farting around on the laptop, and the other contains a monk talking on a cell phone.');
+new Product('Tech Monks Teacups', '../img/tech-monks-teacups.jpg', 'tech-monks-teacups', 'Are you the kind of person who likes to mix tradition with technology? Are you a monk at heart, but a techie at the same time? Most monks are thought of as not technically savvy, but you know very well that there are some people who break the mold. Now you can display the kind of diversity that you embody with these tech monk teacups. One cup contains a monk farting around on a laptop, and the other contains a monk talking on a cell phone.');
 new Product('Tin Foil Hat for Cats', '../img/tin-foil-hat-for-cats.jpg', 'tin-foil-hat-for-cats', 'Does your cat believe in conspiracy theories? Does it want some kind of shield on its head to prevent the government from controlling its mind?! We have the perfect product for you: a tin foil hat for your cat. This hat protects against possible threats including HAARP, gamma rays, electromagnetic fields, RFID implants, and dog ESP!');
 new Product('Unicorn Hooves', '../img/unicorn-hooves.jpg', 'unicorn-hooves', 'Is your unicorn missing hooves? I don\'t know how the heck that happened or even how you got a unicorn in the first place, but we have spare hooves if you need them. Turn your majestic unicorn into the perfect cyborg. These hooves allow your unicorn to walk on water and provide rocket propulsion in case its wings don\'t work.');
 new Product('Unicorn Mints', '../img/unicorn-mints.jpg', 'unicorn-mints', 'Ever have stinky breath and wish you could eat breath mints that make your mouth feel you could shoot rainbows out of it? Introducing unicorn mints: the perfect way to deal with the stink and make your mouth feel magical!');
@@ -116,7 +116,7 @@ function displayBottomButton() {
   returnToTopElement.appendChild(buttonElement);
 }
 
-var resetButton = document.getElementById('dat-reset');
+var resetButton = document.getElementById('search-clear');
 resetButton.style.display = 'none';
 resetButton.addEventListener('click', resetSearch);
 var ul = document.getElementById('product-list');
@@ -164,7 +164,7 @@ function productSearch() {
 }
 
 function resetSearch(event) {
-  if (event.target.id === 'dat-reset') {
+  if (event.target.id === 'search-clear') {
     for (var i = 0; i < li.length; i++) {
       li[i].style.display = '';
     }
