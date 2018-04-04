@@ -58,6 +58,7 @@ nav#game-status-bar {
   text-align: center;
   width: 15vw;
 }
+
 nav#game-status-bar ul li {
   font-size: 1.5em;
   font-weight: 900;
@@ -157,6 +158,44 @@ td {
   margin-top: 2em;
   width: 15vw;
 }
+
+/* responsive design for the status and end of game bars */
+@media (max-width: 1080px) {
+  nav#game-status-bar, #end-of-game {
+  width:20vw;
+  }
+}
+
+@media (max-width: 900px) {
+  nav#game-status-bar {
+  width:20vw;
+  }
+}
+
+@media (max-width: 810px) {
+  nav#game-status-bar, #end-of-game  {
+  width:25vw;
+  }
+}
+
+@media (max-width: 720px) {
+  nav#game-status-bar, #end-of-game {
+  width:30vw;
+  }
+}
+
+@media (max-width: 540px) {
+  nav#game-status-bar, #end-of-game {
+  width:40vw;
+  }
+}
+
+@media (max-width: 480px) {
+  nav#game-status-bar, #end-of-game {
+  width:50vw;
+  }
+}
+
 #end-of-game h2 {
   font-size: 1em;
   text-align: center;
