@@ -381,7 +381,7 @@ div#full-prod-img img {
   margin: 2em -2.75em 2em 7.5em;
 }
 
-#dat-reset {
+#search-clear {
   background-image: url('../img/close-x.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -401,16 +401,16 @@ div#full-prod-img img {
 }
 /* browser specific styling: target Chrome */
 @supports (-webkit-appearance:none) {
-  #dat-reset {
+  #search-clear {
     top:.6em;
   }
 }  
 /* browser-specific styling: target Firefox */
-_:-moz-tree-row(hover), #dat-reset {
+_:-moz-tree-row(hover), #search-clear {
   top:-.25em;
 }
 
-#dat-reset:focus {
+#search-clear:focus {
   outline: none;
 }
 
