@@ -9,7 +9,10 @@ h1, h2, h3, p, a, li {
 }
 header {
   padding: 26px 0;
+  width:100vw;
+  min-width: 540px;
 }
+
 header img {
   width: 500px;
   margin: 0 auto;

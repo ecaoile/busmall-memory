@@ -109,6 +109,7 @@ div.ex a {
 header {
   background-color: #171D1C;
 }
+
 header img {
   width: 500px;
   margin: 0 auto;
@@ -121,6 +122,7 @@ header nav {
   top: 0;
   background: #004777;
   z-index: 1;
+
 }
 .logo {
 display: block;
