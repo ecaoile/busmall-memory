@@ -184,7 +184,7 @@ td {
   }
   nav#game-status-bar {
     width:100%;
-    min-width: 100%;
+    min-width: 500px;
     height:5vw;
   }
 
