@@ -184,8 +184,8 @@ td {
   }
   nav#game-status-bar {
     width:100%;
-    min-width: 500px;
-    height:5vw;
+    min-width: 540px;
+    height:5vh;
   }
 
   nav#game-status-bar ul li  {
