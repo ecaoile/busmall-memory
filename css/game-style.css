@@ -178,20 +178,37 @@ td {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 750px) {
   nav#game-status-bar, #end-of-game {
   width:30vw;
   }
+  nav#game-status-bar {
+    width:100vw;
+    height:2vw;
+    display: block;  
+  }
+
+  nav#game-status-bar ul li  {
+    display: inline-block;
+    margin-top:-4em;
+  }
+
+  nav#game-status-bar #timer {
+    display: inline-block;
+    font-size:1.5em;
+    top: 6px;
+  }
 }
 
+
 @media (max-width: 540px) {
-  nav#game-status-bar, #end-of-game {
+  #end-of-game {
   width:40vw;
   }
 }
 
 @media (max-width: 480px) {
-  nav#game-status-bar, #end-of-game {
+  #end-of-game {
   width:50vw;
   }
 }
