@@ -187,11 +187,12 @@ td {
     width:100%;
     min-width: 20em;
     height:5vh;
-    margin: 2em auto;
+    margin: .75em auto;
   }
 
   #end-of-game {
-    height:35vh;
+    height:32vh;
+    min-height:13em;
     text-align: center;
   }
 
