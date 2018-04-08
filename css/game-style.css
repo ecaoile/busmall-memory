@@ -181,17 +181,22 @@ td {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 760px) {
+
   nav#game-status-bar, #end-of-game {
-  width:30vw;
-  }
-  nav#game-status-bar {
     width:100%;
-    min-width: 540px;
+    min-width: 20em;
     height:5vh;
+    margin: 2em auto;
   }
 
-  nav#game-status-bar ul li  {
+  #end-of-game {
+    height:35vh;
+    text-align: center;
+  }
+
+  nav#game-status-bar ul li, #end-of-game ul li, 
+  #end-of-game a, #end-of-game h2 {
     display: inline-block;
     margin-top:-4em;
   }
@@ -203,7 +208,7 @@ td {
   }
 }
 
-
+/*
 @media (max-width: 540px) {
   #end-of-game {
   width:40vw;
@@ -215,7 +220,7 @@ td {
   width:50vw;
   }
 }
-
+*/
 #end-of-game h2 {
   font-size: 1em;
   text-align: center;
