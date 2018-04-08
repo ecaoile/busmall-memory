@@ -293,7 +293,10 @@ div#index-footer {
 div#prod-page-title {
 text-align: center;
 }
-
+  
+div#prod-page-title h1{
+  font-size: 2.5em;
+}
 div.product-container {
 background-color: #0B4F6C;
 box-shadow: 5px 5px #415A77;
@@ -376,11 +379,18 @@ div#full-prod-img img {
   background-position: 8px;
   background-size: 30px;
   background-repeat: no-repeat;
-  width: 35%;
+  width: 30em;  
   font-size: 16px;
   padding: 1.2em 2.5em 1.2em 2.5em;
   border: 1px solid #ddd;
   margin: 2em -2.75em 2em 7.5em;
+}
+
+@media (max-width: 700px) {
+  #myInput {
+    width:90vw;
+    margin: 2em -2.75em 2em 2em;
+  }
 }
 
 #search-clear {
