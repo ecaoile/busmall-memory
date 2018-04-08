@@ -123,3 +123,5 @@ https://stackoverflow.com/questions/34834349/css-flip-animation-not-working-in-s
 
 Research on responsive design with media queries:
 https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
+https://learn.shayhowe.com/advanced-html-css/responsive-web-design/
