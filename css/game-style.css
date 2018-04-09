@@ -185,7 +185,7 @@ td {
 
   nav#game-status-bar, #end-of-game {
     width:100vw;
-    min-width: 600px;
+    min-width: 540px;
     height:5vh;
     margin: .75em 0;
   }
