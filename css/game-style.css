@@ -209,19 +209,6 @@ td {
   }
 }
 
-/*
-@media (max-width: 540px) {
-  #end-of-game {
-  width:40vw;
-  }
-}
-
-@media (max-width: 480px) {
-  #end-of-game {
-  width:50vw;
-  }
-}
-*/
 #end-of-game h2 {
   font-size: 1em;
   text-align: center;
